@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ============================================
+           PAGE-SPECIFIC: Root overrides
+           ============================================ */
+        :root {
+            --section-padding: 72px;
+            --content-max: 720px;
+        }
+
+
+        /* ============================================
+           HERO — MISSION
+           ============================================ */
+        .mission-hero {
+            background: var(--navy-deep);
+            color: var(--text-on-dark);
+            padding: 80px var(--page-margin) 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(232, 88, 46, 0.07) 0%, transparent 65%);
+            animation: flickerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .mission-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: var(--wide-max);
+        }
+        .mission-hero .page-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 24px;
+            animation: fadeIn 0.8s ease 0.2s both;
+        }
+        .mission-hero h1 {
+            font-family: var(--display);
+            font-size: clamp(52px, 8vw, 96px);
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.9s ease 0.4s both;
+        }
+        .mission-hero .hero-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            animation: fadeIn 0.8s ease 0.7s both;
+        }
+
+
+        /* ============================================
+           THE CRISIS (Cream — editorial prose + stats)
+           ============================================ */
+        .crisis-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .prose-block {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+        .prose-block h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 24px;
+        }
+        .prose-block p {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 20px;
+        }
+        .prose-block p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* Stats — vertical statements with rules */
+        .mission-stats {
+            display: flex;
+            flex-direction: column;
+            max-width: var(--content-max);
+            margin: 40px auto;
+        }
+        .mission-stat {
+            padding: 28px 0;
+            border-top: 1px solid var(--light-border);
+        }
+        .mission-stat:last-child {
+            border-bottom: 1px solid var(--light-border);
+        }
+        .mission-stat .stat-figure {
+            font-family: var(--display);
+            font-size: clamp(48px, 5vw, 72px);
+            color: var(--orange);
+            line-height: 0.95;
+            margin-bottom: 8px;
+        }
+        .mission-stat .stat-context {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.45;
+            max-width: 600px;
+        }
+
+
+        /* ============================================
+           THE PHILOSOPHY (Navy band)
+           ============================================ */
+        .philosophy-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .philosophy-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .philosophy-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+        }
+        .philosophy-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .philosophy-columns p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-muted-on-dark);
+            margin-bottom: 18px;
+        }
+        .philosophy-columns p strong {
+            color: var(--text-on-dark);
+            font-weight: 600;
+        }
+        .philosophy-quote {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 0 0;
+            border-top: 1px solid var(--navy-accent);
+            margin-top: 16px;
+            position: relative;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .philosophy-quote .quote-mark {
+            font-family: var(--display);
+            font-size: clamp(80px, 10vw, 140px);
+            line-height: 0.5;
+            color: var(--orange);
+            opacity: 0.7;
+            position: absolute;
+            top: 38px;
+            left: -10px;
+            user-select: none;
+        }
+        .philosophy-quote blockquote {
+            font-family: var(--body);
+            font-size: clamp(22px, 3vw, 34px);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--text-on-dark);
+            padding-left: 48px;
+            margin: 0 auto 14px;
+        }
+        .philosophy-quote cite {
+            display: block;
+            padding-left: 48px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange);
+        }
+
+
+        /* ============================================
+           THE PRINCIPLES (Light blue — editorial list)
+           ============================================ */
+        .principles-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .principles-header {
+            max-width: var(--wide-max);
+            margin: 0 auto 40px;
+        }
+        .principles-header h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .principles-header p {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 48px;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .principle-item {
+            padding: 22px 0 22px 44px;
+            border-top: 1px solid var(--light-border);
+            position: relative;
+        }
+        .principle-item:nth-child(1),
+        .principle-item:nth-child(2) {
+            /* no top border on first row */
+        }
+        .principle-item:nth-last-child(1),
+        .principle-item:nth-last-child(2) {
+            border-bottom: 1px solid var(--light-border);
+        }
+        .principle-item .principle-num {
+            position: absolute;
+            left: 0;
+            top: 22px;
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--orange);
+            line-height: 1;
+            opacity: 0.8;
+        }
+        .principle-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .principle-item p {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+        }
+
+
+        /* ============================================
+           THE ORIGIN (Cream — Baker's story)
+           ============================================ */
+        .origin-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .origin-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+            align-items: center;
+        }
+        .origin-portrait {
+            aspect-ratio: 3 / 4;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+        }
+        .origin-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .origin-text h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        .origin-text p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 18px;
+        }
+        .origin-text p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        .origin-text .baker-quote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 24px;
+            margin: 28px 0;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--navy-deep);
+        }
+
+
+        /* ============================================
+           THE COALITION (Navy)
+           ============================================ */
+        .coalition-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .coalition-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+            text-align: center;
+        }
+        .coalition-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 14px;
+        }
+        .coalition-inner .coalition-intro {
+            font-size: 17px;
+            color: var(--text-muted-on-dark);
+            max-width: 580px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .coalition-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .coalition-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        .coalition-logo:hover {
+            opacity: 1;
+        }
+        .coalition-logo img {
+            height: 64px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+        .coalition-logo.logo-invert img {
+            filter: brightness(0) invert(1);
+            opacity: 0.65;
+            transition: opacity 0.3s ease;
+        }
+        .coalition-logo.logo-invert:hover img {
+            opacity: 0.9;
+        }
+        .coalition-logo.logo-white img {
+            opacity: 0.65;
+            transition: opacity 0.3s ease;
+        }
+        .coalition-logo.logo-white:hover img {
+            opacity: 0.9;
+        }
+        .coalition-note {
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--text-muted-on-dark);
+        }
+
+
+        /* ============================================
+           PAGE-SPECIFIC RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .philosophy-columns { grid-template-columns: 1fr; }
+            .principles-list { grid-template-columns: 1fr; }
+            .origin-inner { grid-template-columns: 1fr; }
+            .origin-portrait { max-width: 360px; }
+        }
+
+        @media (max-width: 768px) {
+            .mission-hero { padding-top: 60px; }
+            .mission-hero h1 { font-size: clamp(42px, 10vw, 72px); }
+            .coalition-logos { gap: 16px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="site-nav scrolled">
+        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html" class="active">Mission</a></li>
+            <li><a href="writers.html">Writers</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/support" class="nav-cta">Support</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer">
+        <a href="index.html">Home</a>
+        <a href="mission.html" class="active">Mission</a>
+        <a href="writers.html">Writers</a>
+        <a href="articles.html">Articles</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="/events">Events</a>
+        <a href="/shop">Shop</a>
+        <a href="/support" class="drawer-cta">Support</a>
+    </div>
+    <div class="nav-drawer-overlay"></div>
+
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="mission-hero">
+        <div class="mission-hero-inner">
+            <div class="page-label">Our Mission</div>
+            <h1>VOLUNTARY REFORM NOW —<br>OR INVOLUNTARY<br>COLLAPSE LATER</h1>
+            <p class="hero-intro">Britain's political class has converged on a consensus of managed decline. Both parties offer the same answer — more state, more spending, more control. Fighting for a Free Future exists because managed decline isn't management. It's surrender.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE CRISIS
+         ============================================ -->
+    <section class="crisis-section">
+        <div class="prose-block reveal">
+            <h2>THE RECKONING</h2>
+            <p>This is not a distant economic threat. The reckoning is here. Britain's National Insurance Fund — the mechanism that pays state pensions and funds the safety net — is projected to default by 2043-44. That's not a warning for another generation. It's a deadline for this one.</p>
+            <p>The numbers tell a story that politicians on both sides have spent decades refusing to read.</p>
+        </div>
+
+        <div class="mission-stats reveal reveal-delay-1">
+            <div class="mission-stat">
+                <div class="stat-figure">95.8%</div>
+                <div class="stat-context">Britain's debt-to-GDP ratio. Levels not seen since the aftermath of the Second World War.</div>
+            </div>
+            <div class="mission-stat">
+                <div class="stat-figure">£127.5BN</div>
+                <div class="stat-context">Borrowed this year alone. That's 4.5% of everything the country earns.</div>
+            </div>
+            <div class="mission-stat">
+                <div class="stat-figure">2043</div>
+                <div class="stat-context">The year the National Insurance Fund runs out. Not a projection — a scheduled default.</div>
+            </div>
+            <div class="mission-stat">
+                <div class="stat-figure">70 YRS</div>
+                <div class="stat-context">Of compounding state expansion. Government spending has never fallen below 34% of national income.</div>
+            </div>
+        </div>
+
+        <div class="prose-block reveal reveal-delay-2">
+            <p><strong>Housing is unaffordable. Real wages have stagnated. Public services are deteriorating despite historically high taxation.</strong> Interest payments on government debt have doubled year-over-year. Behind closed doors, many MPs acknowledge the truth — but electoral incentives keep them silent. This is the space Fighting for a Free Future occupies. The arguments too important to leave unsaid.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE PHILOSOPHY (Navy)
+         ============================================ -->
+    <section class="philosophy-section">
+        <div class="philosophy-inner reveal">
+            <h2>THE FUNDAMENTAL CHOICE</h2>
+            <div class="philosophy-columns">
+                <div>
+                    <p>The old left-right paradigm is obsolete. The real division in British politics is not between Labour and Conservative — it's between two fundamentally different visions for how society should work.</p>
+                    <p><strong>On one side: voluntary cooperation in a free society.</strong> Markets as engines of cooperation and prosperity. Decisions made at the most local level possible. Individuals and communities choosing their own paths. Big society, not big government.</p>
+                </div>
+                <div>
+                    <p><strong>On the other: coercive management by authority.</strong> Central planning. Top-down control. The assumption that the state knows better than the people it governs. This is the model both parties have converged on — and it has produced low growth, stagnant productivity, housing unaffordability, monetary instability, regulatory sclerosis, and social fragmentation.</p>
+                    <p>Fighting for a Free Future argues for the first vision. Not because it's theoretically elegant — but because the alternative is visibly, measurably failing. The evidence is in the numbers above. The only question is whether we choose reform or wait for collapse.</p>
+                </div>
+
+                <div class="philosophy-quote reveal reveal-delay-2">
+                    <span class="quote-mark">"</span>
+                    <blockquote>If the honourable Gentleman uses the word 'ideological' to accuse me of having thought about how society works and what the law ought to be, of course I plead guilty.</blockquote>
+                    <cite>Steve Baker · House of Commons, 2010</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE PRINCIPLES (Light blue — editorial list)
+         ============================================ -->
+    <section class="principles-section">
+        <div class="principles-header reveal">
+            <h2>TWELVE PRINCIPLES FOR A FREE SOCIETY</h2>
+            <p>Fighting for a Free Future is built on twelve foundational principles, drawn from Dr. Nigel Ashford's work. These are not abstract ideals — they are the conditions under which free societies prosper.</p>
+        </div>
+
+        <div class="principles-list reveal reveal-delay-1">
+            <div class="principle-item">
+                <span class="principle-num">01</span>
+                <h3>Civil Society</h3>
+                <p>Voluntary associations between individuals — the fabric that holds communities together, increasingly undermined by state expansion.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">02</span>
+                <h3>Democracy</h3>
+                <p>The peaceful removal of those in power through elections. Not mob rule — structured accountability.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">03</span>
+                <h3>Equality Before Law</h3>
+                <p>One law, applied uniformly, without double standards or special privileges for those in power.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">04</span>
+                <h3>Free Enterprise</h3>
+                <p>The right to create, trade, and compete — diminished by corporatism, regulatory capture, and state favouritism.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">05</span>
+                <h3>Freedom</h3>
+                <p>The individual's sphere of action — shrinking year by year under the weight of legislation and regulation.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">06</span>
+                <h3>Human Rights</h3>
+                <p>Universal safeguards for every person — not identity-group privileges or political instruments.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">07</span>
+                <h3>Justice</h3>
+                <p>Impartial law enforcement. The rule of law means nothing if enforcement is selective.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">08</span>
+                <h3>Peace</h3>
+                <p>Social order based on consent, not coercion. A free society is a peaceful society.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">09</span>
+                <h3>Private Property</h3>
+                <p>The right to own and control — undermined by arbitrary restrictions, compulsory purchase, and planning regimes.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">10</span>
+                <h3>Rule of Law</h3>
+                <p>One law for all, equally applied. The foundation on which every other freedom depends.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">11</span>
+                <h3>Spontaneous Order</h3>
+                <p>The emergent patterns that arise from free interaction — not designed by any central planner, but more effective than anything a committee could produce.</p>
+            </div>
+            <div class="principle-item">
+                <span class="principle-num">12</span>
+                <h3>Toleration</h3>
+                <p>Peaceable coexistence despite disagreement. The willingness to let others live differently — the hardest principle and the most essential.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE ORIGIN — BAKER'S STORY (Cream)
+         ============================================ -->
+    <section class="origin-section">
+        <div class="origin-inner">
+            <div class="origin-portrait reveal">
+                <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker portrait">
+            </div>
+            <div class="origin-text reveal reveal-delay-2">
+                <h2>WHO'S BEHIND THIS</h2>
+                <p><strong>Steve Baker</strong> spent thirty years inside the machine — Royal Air Force, software engineering, then Parliament. He served as a government minister in the Cabinet Office, Northern Ireland Office, and as a Brexit minister. He saw how the system works from every angle.</p>
+                <p>He lost his seat in the 2024 election. Instead of retreating to the private sector, he built Fighting for a Free Future — because the arguments for freedom needed a platform that wasn't constrained by party whips, electoral calculation, or institutional caution.</p>
+
+                <div class="baker-quote">"If the Conservative Party does not stand for freedom, it stands for nothing."</div>
+
+                <p>Fighting for a Free Future launched in September 2025 as a cross-institutional coalition. The Insurgency podcast followed immediately. The Substack, Voices for a Free Future, had already been building an audience since mid-2024.</p>
+                <p>Today the team includes <strong>Harry Richer</strong> as Director and podcast co-host, and <strong>Liam Noble Shearer</strong> as Operations Manager — alongside a growing roster of guest writers from think tanks, journalism, and the next generation of pro-freedom voices.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE COALITION (Navy)
+         ============================================ -->
+    <section class="coalition-section">
+        <div class="coalition-inner reveal">
+            <h2>THE COALITION</h2>
+            <p class="coalition-intro">Fighting for a Free Future is backed by a coalition of Britain's leading free-market institutions. Ten think tanks and organisations that have chosen to amplify one another's voices rather than compete for attention.</p>
+
+            <div class="coalition-logos">
+                <!-- Adam Smith Institute — white version on transparent bg -->
+                <div class="coalition-logo logo-white">
+                    <img src="https://images.squarespace-cdn.com/content/v1/56eddde762cd9413e151ac92/1458931465922-ICS35O5C6KWDJ5EFQS96/HIL4+-+White+trans.png" alt="Adam Smith Institute" loading="lazy">
+                </div>
+                <!-- IEA — local PNG, invert to white -->
+                <div class="coalition-logo logo-invert">
+                    <img src="assets/iea.png" alt="Institute of Economic Affairs" loading="lazy">
+                </div>
+                <!-- CPS — local SVG -->
+                <div class="coalition-logo logo-invert">
+                    <img src="assets/cps-logo.svg" alt="Centre for Policy Studies" style="height: 88px;" loading="lazy">
+                </div>
+                <!-- TaxPayers' Alliance — invert to white -->
+                <div class="coalition-logo logo-invert">
+                    <img src="https://taxpayersalliance.com/content/images/2025/01/navbar__logo_jv2.png" alt="TaxPayers' Alliance" loading="lazy">
+                </div>
+            </div>
+            <p class="coalition-note">Plus six additional coalition members working across policy, education, and advocacy.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CTA (Navy-deep)
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <h2 class="cta-title">JOIN THE FIGHT<br>FOR A FREE FUTURE</h2>
+            <p class="cta-subtitle">Free essays, podcast episodes, and the arguments that matter. Delivered weekly to people who think Britain deserves better.</p>
+            <form class="cta-form" onsubmit="return false;">
+                <input type="email" placeholder="Your email" aria-label="Email address">
+                <button type="submit">I'm In</button>
+            </form>
+            <p class="cta-note">Free. No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
+                <div class="footer-purpose" data-live-date></div>
+            </div>
+            <div class="footer-links">
+                <a href="mission.html">Mission</a>
+                <a href="writers.html">Writers</a>
+                <a href="articles.html">Articles</a>
+                <a href="podcast.html">Podcast</a>
+                <a href="/events">Events</a>
+                <a href="/shop">Shop</a>
+                <a href="/support">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
+            <div class="footer-social">
+                <a href="#">YouTube</a>
+                <a href="#">Substack</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================
+         SHARED JS
+         ============================================ -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

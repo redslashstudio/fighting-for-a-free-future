@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writers — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ============================================
+           PAGE-SPECIFIC: Writers
+           ============================================ */
+
+        /* Override shared defaults for this page */
+        :root {
+            --section-padding: 72px;
+            --content-max: 720px;
+        }
+
+
+        /* ============================================
+           WRITERS HERO
+           ============================================ */
+        .writers-hero {
+            background: var(--navy-deep);
+            color: var(--text-on-dark);
+            padding: 80px var(--page-margin) 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .writers-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(232, 88, 46, 0.07) 0%, transparent 65%);
+            animation: flickerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .writers-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: var(--wide-max);
+        }
+        .writers-hero .page-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 24px;
+            animation: fadeIn 0.8s ease 0.2s both;
+        }
+        .writers-hero h1 {
+            font-family: var(--display);
+            font-size: clamp(52px, 8vw, 96px);
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.9s ease 0.4s both;
+        }
+        .writers-hero .hero-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            animation: fadeIn 0.8s ease 0.7s both;
+        }
+
+
+        /* ============================================
+           THE FOUNDERS (Cream)
+           ============================================ */
+        .founders-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .founders-header {
+            max-width: var(--wide-max);
+            margin: 0 auto 56px;
+        }
+        .founders-header h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+        }
+
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 48px;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+            padding-bottom: 56px;
+            margin-bottom: 56px;
+            border-bottom: 1px solid var(--light-border);
+            align-items: start;
+        }
+        .founder-profile:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .founder-portrait {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+        }
+        .founder-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .founder-info .founder-role {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+        .founder-info .founder-name {
+            font-family: var(--display);
+            font-size: 40px;
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        .founder-info .founder-bio {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 28px;
+        }
+        .founder-info .founder-bio p {
+            margin-bottom: 14px;
+        }
+        .founder-info .founder-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .founder-articles {
+            border-top: 1px solid var(--light-border);
+            padding-top: 20px;
+        }
+        .founder-articles .articles-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+        .founder-articles ul {
+            list-style: none;
+        }
+        .founder-articles li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-border);
+        }
+        .founder-articles li:last-child {
+            border-bottom: none;
+        }
+        .founder-articles .article-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.2s ease;
+            flex: 1;
+            margin-right: 16px;
+        }
+        .founder-articles a:hover .article-title {
+            color: var(--orange);
+        }
+        .founder-articles .article-date {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+        .founder-view-all {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: color 0.2s ease;
+        }
+        .founder-view-all:hover {
+            color: var(--orange-hover);
+        }
+
+
+        /* ============================================
+           THE VOICES (Light blue)
+           ============================================ */
+        .voices-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .voices-header {
+            max-width: var(--wide-max);
+            margin: 0 auto 40px;
+        }
+        .voices-header h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 10px;
+        }
+        .voices-header p {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        .voices-list {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+
+        .voice-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 24px;
+            align-items: center;
+            padding: 28px 0;
+            border-top: 1px solid var(--light-border);
+        }
+        .voice-row:last-child {
+            border-bottom: 1px solid var(--light-border);
+        }
+
+        .voice-portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .voice-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .voice-info .voice-name {
+            font-family: var(--display);
+            font-size: 28px;
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 6px;
+        }
+        .voice-info .voice-bio {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+        }
+        .voice-info .voice-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .voice-info .voice-articles a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--orange);
+            transition: color 0.2s ease;
+        }
+        .voice-info .voice-articles a:hover {
+            color: var(--orange-hover);
+        }
+
+        /* Pitch row */
+        .voice-row.pitch-row {
+            align-items: center;
+        }
+        .pitch-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--navy-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pitch-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+        .pitch-info .voice-name {
+            font-family: var(--display);
+            font-size: 28px;
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 6px;
+        }
+        .pitch-info .voice-bio {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+        }
+        .pitch-info .pitch-link {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: color 0.2s ease;
+        }
+        .pitch-info .pitch-link:hover {
+            color: var(--orange-hover);
+        }
+
+
+        /* ============================================
+           PAGE-SPECIFIC RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .founder-profile {
+                grid-template-columns: 260px 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .writers-hero { padding-top: 60px; }
+            .writers-hero h1 { font-size: clamp(42px, 10vw, 72px); }
+
+            .founder-profile {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .founder-portrait {
+                max-width: 280px;
+            }
+
+            .voice-row {
+                grid-template-columns: 80px 1fr;
+                gap: 16px;
+            }
+            .voice-portrait,
+            .pitch-icon {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="site-nav scrolled">
+        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="writers.html" class="active">Writers</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/support" class="nav-cta">Support</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="writers.html" class="active">Writers</a>
+        <a href="articles.html">Articles</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="/events">Events</a>
+        <a href="/shop">Shop</a>
+        <a href="/support" class="drawer-cta">Support</a>
+    </div>
+    <div class="nav-drawer-overlay"></div>
+
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="writers-hero">
+        <div class="writers-hero-inner">
+            <div class="page-label">Meet the team</div>
+            <h1>THE INSURGENTS</h1>
+            <p class="hero-intro">Politicians, economists, and troublemakers who refuse to accept managed decline. Writing the arguments that matter for people who think for themselves.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE FOUNDERS (Cream)
+         ============================================ -->
+    <section class="founders-section">
+        <!-- STEVE BAKER -->
+        <div class="founder-profile reveal">
+            <div class="founder-portrait">
+                <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker">
+            </div>
+            <div class="founder-info">
+                <span class="founder-role">Chairman</span>
+                <h3 class="founder-name">STEVE BAKER</h3>
+                <div class="founder-bio">
+                    <p>RAF engineer, software architect at Lehman Brothers, the MP who made Brexit arithmetically possible, a government minister who lost his seat — and decided to build a movement rather than disappear. Baker has spent thirty years inside institutions that were supposed to work and watched them fail from every angle.</p>
+                    <p>Now he chairs Fighting for a Free Future and hosts The Insurgency podcast, turning the organising instincts that once rewired Parliament toward the harder problem: changing what Britain thinks is possible.</p>
+                </div>
+                <div class="founder-articles">
+                    <div class="articles-label">Latest</div>
+                    <ul>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers">
+                                <span class="article-title">Tyranny of the Month: HMRC Powers</span>
+                                <span class="article-date">Mar 2026</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/tax-on-fuel-is-an-outrage-so-are">
+                                <span class="article-title">Tax on Fuel Is an Outrage — So Are the Politics</span>
+                                <span class="article-date">Mar 2026</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/war-with-iran-what-would-you-do">
+                                <span class="article-title">War With Iran: What Would You Do?</span>
+                                <span class="article-date">Mar 2026</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="https://voices.fightingforafreefuture.com" class="founder-view-all">View all articles →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HARRY RICHER -->
+        <div class="founder-profile reveal">
+            <div class="founder-portrait">
+                <img src="assets/writer-portraits/harry-richer-portrait.png" alt="Harry Richer">
+            </div>
+            <div class="founder-info">
+                <span class="founder-role">Director</span>
+                <h3 class="founder-name">HARRY RICHER</h3>
+                <div class="founder-bio">
+                    <p>Harry Richer is the Director of Fighting for a Free Future and co-hosts The Insurgency podcast. Before launching FFF, he served as Baker's senior aide and was Head of Research for the Covid Recovery Group, the backbench caucus that challenged the UK Government's lockdown modelling in real time.</p>
+                    <p>A contributing author to <em>The Age of Debt Bubbles</em> (Springer, 2024) and published in CapX and The National Interest, he sits at the junction of policy research, editorial provocation and broadcast media — the person who turns an argument into a headline.</p>
+                </div>
+                <div class="founder-articles">
+                    <div class="articles-label">Latest</div>
+                    <ul>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/our-politicians-dont-read-thats-why">
+                                <span class="article-title">Our Politicians Don't Read. That's Why Britain Is Failing</span>
+                                <span class="article-date">Mar 2026</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/we-need-to-talk-about-che-guevara">
+                                <span class="article-title">We Need To Talk About Che Guevara</span>
+                                <span class="article-date">Feb 2026</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/britains-fiscal-reckoning-the-inevitability">
+                                <span class="article-title">Britain's Fiscal Reckoning: The Inevitability of Spending Cuts</span>
+                                <span class="article-date">Aug 2025</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="https://voices.fightingforafreefuture.com" class="founder-view-all">View all articles →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIAM NOBLE SHEARER -->
+        <div class="founder-profile reveal">
+            <div class="founder-portrait">
+                <img src="assets/writer-portraits/liam-shearer-portrait.png" alt="Liam Noble Shearer">
+            </div>
+            <div class="founder-info">
+                <span class="founder-role">Operations Manager</span>
+                <h3 class="founder-name">LIAM NOBLE SHEARER</h3>
+                <div class="founder-bio">
+                    <p>Liam Noble Shearer runs the operational backbone of Fighting for a Free Future — podcast production, Substack publishing, and the logistics that keep a media brand running. A former Parliamentary staffer and freelance writer with bylines in City AM and Research Professional News, he brings a rare combination of political experience and editorial instinct to the operation.</p>
+                </div>
+                <div class="founder-articles">
+                    <div class="articles-label">Latest</div>
+                    <ul>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/we-cannot-forget-that-all-people">
+                                <span class="article-title">We Cannot Forget That All People Are Created Equal</span>
+                                <span class="article-date">Mar 2026</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/libertarian-self-doubt">
+                                <span class="article-title">Libertarian Self-Doubt</span>
+                                <span class="article-date">Dec 2025</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://voices.fightingforafreefuture.com/p/britains-free-speech-frankenstein">
+                                <span class="article-title">Britain's Free Speech Frankenstein</span>
+                                <span class="article-date">Oct 2025</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="https://voices.fightingforafreefuture.com" class="founder-view-all">View all articles →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE VOICES (Light blue)
+         ============================================ -->
+    <section class="voices-section">
+        <div class="voices-list">
+            <!-- VIGGO TERLING -->
+            <div class="voice-row reveal">
+                <div class="voice-portrait">
+                    <img src="assets/writer-portraits/viggo-terling-portrait.png" alt="Viggo Terling">
+                </div>
+                <div class="voice-info">
+                    <h3 class="voice-name">VIGGO TERLING</h3>
+                    <p class="voice-bio">Research Associate at the Adam Smith Institute and board member of the Swedish Moderates. Writes on economic liberalism, digital governance, and institutional reform with a cross-border perspective that most Westminster commentary lacks.</p>
+                    <div class="voice-articles">
+                        <a href="https://voices.fightingforafreefuture.com/p/you-can-be-progressive-and-economically">You can be progressive and economically liberal →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALBIE AMANKONA -->
+            <div class="voice-row reveal reveal-delay-1">
+                <div class="voice-portrait">
+                    <img src="assets/writer-portraits/albie-amankona-portrait.png" alt="Albie Amankona">
+                </div>
+                <div class="voice-info">
+                    <h3 class="voice-name">ALBIE AMANKONA</h3>
+                    <p class="voice-bio">Financial analyst, broadcaster, and co-founder of Britain's first centre-right anti-racist organisation. Joined FFF because "the British right has broken faith with the country it inherited." Monthly columnist and regular on Sky News, LBC, and Times Radio.</p>
+                    <div class="voice-articles">
+                        <a href="https://voices.fightingforafreefuture.com/p/reforms-fatal-contradiction">Reform's Fatal Contradiction →</a>
+                        <a href="https://voices.fightingforafreefuture.com/p/you-cant-stop-the-boats-while-supporting">You Can't Stop the Boats While Supporting Middle East Chaos →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVE LUGG -->
+            <div class="voice-row reveal reveal-delay-2">
+                <div class="voice-portrait">
+                    <img src="assets/writer-portraits/eve-lugg-portrait.png" alt="Eve Lugg">
+                </div>
+                <div class="voice-info">
+                    <h3 class="voice-name">EVE LUGG</h3>
+                    <p class="voice-bio">Former Cabinet Office Special Adviser who saw the machinery of government from inside — and decided to argue against it. Writes on liberty, state overreach, and the post-lockdown drift toward control. Monthly columnist and Counter-Insurgency regular.</p>
+                    <div class="voice-articles">
+                        <a href="https://voices.fightingforafreefuture.com/p/legal-advice-says-no-starmers-legalistic">Legal Advice Says No: Starmer's Legalistic Utopia →</a>
+                        <a href="https://voices.fightingforafreefuture.com/p/labour-isnt-fixing-policing-or-illegal">Labour Isn't Fixing Policing — It's Building a Surveillance State →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JOHN ABBOTT -->
+            <div class="voice-row reveal reveal-delay-3">
+                <div class="voice-portrait">
+                    <img src="assets/writer-portraits/john-abbott-portrait.png" alt="John Abbott">
+                </div>
+                <div class="voice-info">
+                    <h3 class="voice-name">JOHN ABBOTT</h3>
+                    <p class="voice-bio">Former IEA intern turned EPICENTER research coordinator turned Harrow Council caseworker. A first-class International Relations graduate fluent in Russian, with something most policy wonks lack: a front-row seat to how government actually lands on real people.</p>
+                    <div class="voice-articles">
+                        <a href="https://voices.fightingforafreefuture.com/p/too-many-paywalls-not-enough-football">Too many paywalls, not enough football →</a>
+                        <a href="https://voices.fightingforafreefuture.com/p/the-build-more-homes-just-not-here">The "Build More Homes, Just Not Here" Phenomenon →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PITCH ROW -->
+            <div class="voice-row pitch-row reveal reveal-delay-4">
+                <div class="pitch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e8582e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="pitch-info">
+                    <h3 class="voice-name">YOUR NAME HERE</h3>
+                    <p class="voice-bio">We commission sharp, evidence-based commentary on economics, liberty, and the future of British politics. If you've got something to say that Westminster won't, we want to hear it.</p>
+                    <a href="mailto:hello@fightingforafreefuture.com" class="pitch-link">Pitch us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CTA (Navy-deep)
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <h2 class="cta-title">READ THE ARGUMENTS<br>THAT MATTER</h2>
+            <p class="cta-subtitle">Free essays, podcast episodes, and sharp commentary. Delivered weekly to people who think Britain deserves better.</p>
+            <form class="cta-form" onsubmit="return false;">
+                <input type="email" placeholder="Your email" aria-label="Email address">
+                <button type="submit">I'm In</button>
+            </form>
+            <p class="cta-note">Free. No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
+                <div class="footer-purpose" data-live-date></div>
+            </div>
+            <div class="footer-links">
+                <a href="mission.html">Mission</a>
+                <a href="writers.html">Writers</a>
+                <a href="articles.html">Articles</a>
+                <a href="podcast.html">Podcast</a>
+                <a href="/events">Events</a>
+                <a href="/shop">Shop</a>
+                <a href="/support">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
+            <div class="footer-social">
+                <a href="#">YouTube</a>
+                <a href="#">Substack</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
