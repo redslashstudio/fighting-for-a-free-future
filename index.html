@@ -765,6 +765,11 @@
             .podcast-layout { grid-template-columns: 1fr; }
             .mission-section { padding: 60px var(--page-margin); }
             .mission-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .writers-strip { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .writers-strip .writer-link { flex: 0 0 140px; }
+            .writers-strip .writer-link img { height: 180px; }
+            .writers-strip .writer-link:hover img { height: 180px; }
+            .writers-strip .writer-link .writer-name { opacity: 1; transform: translateY(0); font-size: 11px; }
             .writers-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
             .signup-form { flex-direction: column; }
             .signup-form input { width: 100%; }
@@ -795,9 +800,9 @@
             <li><a href="writers.html">Writers</a></li>
             <li><a href="articles.html">Articles</a></li>
             <li><a href="podcast.html">Podcast</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/support" class="nav-cta">Support</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="support.html" class="nav-cta">Support</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span>
@@ -813,16 +818,16 @@
         <a href="writers.html">Writers</a>
         <a href="articles.html">Articles</a>
         <a href="podcast.html">Podcast</a>
-        <a href="/events">Events</a>
-        <a href="/shop">Shop</a>
-        <a href="/support" class="drawer-cta">Support</a>
+        <a href="events.html">Events</a>
+        <a href="shop.html">Shop</a>
+        <a href="support.html" class="drawer-cta">Support</a>
     </div>
     <div class="nav-drawer-overlay"></div>
 
     <!-- ============================================
          HERO — Cinematic editorial splash
          ============================================ -->
-    <a href="https://voices.fightingforafreefuture.com/p/our-politicians-dont-read-thats-why" class="hero">
+    <a href="https://voices.fightingforafreefuture.com/p/our-politicians-dont-read-thats-why" target="_blank" rel="noopener" class="hero">
         <div class="hero-image-bg">
             <img src="assets/content-images/our-politicians-dont-read-thats-why-v2.jpg" alt="Our Politicians Don't Read">
         </div>
@@ -851,7 +856,7 @@
                     <img src="assets/content-images/tyranny-of-the-month-hmrc-powers-v2.jpg" alt="Tyranny of the Month: HMRC Powers">
                 </div>
                 <div class="cat">Taxes · Liberty</div>
-                <h3><a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers">Tyranny of the Month: HMRC's Unchecked Powers</a></h3>
+                <h3><a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers" target="_blank" rel="noopener">Tyranny of the Month: HMRC's Unchecked Powers</a></h3>
                 <p>As we approach the end of the financial year, our hero from 1914 considers HMRC's draconian powers.</p>
                 <div class="article-meta">
                     <span class="author-name">Steve Baker</span>
@@ -863,7 +868,7 @@
             <div class="latest-list reveal reveal-delay-2">
                 <div class="latest-list-item">
                     <div class="cat">Economics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/you-can-be-progressive-and-economically">You Can Be "Progressive" and Economically Liberal</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/you-can-be-progressive-and-economically" target="_blank" rel="noopener">You Can Be "Progressive" and Economically Liberal</a></h4>
                     <p class="standfirst">Misconceptions about Scandinavian social democracies are widely held but wrong, writes Viggo Terling.</p>
                     <div class="article-meta">
                         <span class="author-name">Viggo Terling</span>
@@ -872,7 +877,7 @@
                 </div>
                 <div class="latest-list-item">
                     <div class="cat">Policy · Politics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/tax-on-fuel-is-an-outrage-so-are">Tax on Fuel Is an Outrage — So Are the Politics</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/tax-on-fuel-is-an-outrage-so-are" target="_blank" rel="noopener">Tax on Fuel Is an Outrage — So Are the Politics</a></h4>
                     <p class="standfirst">Tax on fuel accounts for 57 per cent of the price of a litre of petrol. That is the TaxPayers' Alliance's stark calculation.</p>
                     <div class="article-meta">
                         <span class="author-name">Steve Baker</span>
@@ -881,7 +886,7 @@
                 </div>
                 <div class="latest-list-item">
                     <div class="cat">Free Market · Policy</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/too-many-paywalls-not-enough-football">Too Many Paywalls, Not Enough Football</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/too-many-paywalls-not-enough-football" target="_blank" rel="noopener">Too Many Paywalls, Not Enough Football</a></h4>
                     <p class="standfirst">UK football fans are blocked by regulations and cartel-style rights packages that would be laughed out of most other markets.</p>
                     <div class="article-meta">
                         <span class="author-name">John Abbott</span>
@@ -900,7 +905,7 @@
         <div class="provocation-inner">
             <span class="provocation-mark">"</span>
             <p class="provocation-quote">HMRC can enter your home, seize your assets, and drain your bank account — without a court order.</p>
-            <p class="provocation-source"><a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers">Steve Baker · Tyranny of the Month →</a></p>
+            <p class="provocation-source"><a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers" target="_blank" rel="noopener">Steve Baker · Tyranny of the Month →</a></p>
         </div>
     </div>
 
@@ -919,7 +924,7 @@
                 <span class="pop-number">1</span>
                 <div class="pop-body">
                     <div class="cat">Economics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/britains-fiscal-reckoning-the-inevitability">Britain's Fiscal Reckoning: The Inevitability of Spending Cuts</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/britains-fiscal-reckoning-the-inevitability" target="_blank" rel="noopener">Britain's Fiscal Reckoning: The Inevitability of Spending Cuts</a></h4>
                     <p class="pop-standfirst">Politicians who say otherwise are either blind to reality or lying.</p>
                     <div class="author-name">Harry Richer</div>
                 </div>
@@ -928,7 +933,7 @@
                 <span class="pop-number">2</span>
                 <div class="pop-body">
                     <div class="cat">Economics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/spending-review-the-myth-of-small">Spending Review: The Myth of Small State Britain</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/spending-review-the-myth-of-small" target="_blank" rel="noopener">Spending Review: The Myth of Small State Britain</a></h4>
                     <p class="pop-standfirst">Spending reviews on the present scale are the equivalent of scrubbing the decks on the Titanic.</p>
                     <div class="author-name">Harry Richer</div>
                 </div>
@@ -937,7 +942,7 @@
                 <span class="pop-number">3</span>
                 <div class="pop-body">
                     <div class="cat">Politics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/the-problem-with-nigel-farage">The Problem with Nigel Farage</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/the-problem-with-nigel-farage" target="_blank" rel="noopener">The Problem with Nigel Farage</a></h4>
                     <p class="pop-standfirst">Reform is a mistake.</p>
                     <div class="author-name">Steve Baker</div>
                 </div>
@@ -946,7 +951,7 @@
                 <span class="pop-number">4</span>
                 <div class="pop-body">
                     <div class="cat">Parliament · Politics</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/why-i-am-not-defecting-to-reform">Why I Am Not Defecting to Reform</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/why-i-am-not-defecting-to-reform" target="_blank" rel="noopener">Why I Am Not Defecting to Reform</a></h4>
                     <p class="pop-standfirst">Nationalism-cosmopolitanism is now the main axis, not socialism-capitalism.</p>
                     <div class="author-name">Steve Baker</div>
                 </div>
@@ -955,7 +960,7 @@
                 <span class="pop-number">5</span>
                 <div class="pop-body">
                     <div class="cat">Economics · Freedom</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/sound-money-is-the-cornerstone-of">Sound Money Is the Cornerstone of a Free Society</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/sound-money-is-the-cornerstone-of" target="_blank" rel="noopener">Sound Money Is the Cornerstone of a Free Society</a></h4>
                     <p class="pop-standfirst">Money was broken in 1971 and it is now breaking society.</p>
                     <div class="author-name">Steve Baker</div>
                 </div>
@@ -964,7 +969,7 @@
                 <span class="pop-number">6</span>
                 <div class="pop-body">
                     <div class="cat">Climate · Policy</div>
-                    <h4><a href="https://voices.fightingforafreefuture.com/p/radical-candour-for-ed-miliband">Radical Candour for Ed Miliband</a></h4>
+                    <h4><a href="https://voices.fightingforafreefuture.com/p/radical-candour-for-ed-miliband" target="_blank" rel="noopener">Radical Candour for Ed Miliband</a></h4>
                     <p class="pop-standfirst">Climate policy is leading us to ruin, often on unscientific foundations.</p>
                     <div class="author-name">Steve Baker</div>
                 </div>
@@ -1157,9 +1162,9 @@
                 <a href="writers.html">Writers</a>
                 <a href="articles.html">Articles</a>
                 <a href="podcast.html">Podcast</a>
-                <a href="/events">Events</a>
-                <a href="/shop">Shop</a>
-                <a href="/support">Support</a>
+                <a href="events.html">Events</a>
+                <a href="shop.html">Shop</a>
+                <a href="support.html">Support</a>
             </div>
         </div>
         <div class="footer-bottom">

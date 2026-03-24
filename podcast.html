@@ -392,6 +392,17 @@
             align-items: center;
             padding: 18px 0;
             border-bottom: 1px solid var(--light-border);
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.2s ease;
+        }
+
+        .counter-list-item:hover {
+            background: rgba(0,0,0,0.015);
+        }
+
+        .counter-list-item:hover h4 {
+            color: var(--orange);
         }
 
         .counter-list-item:last-child {
@@ -418,6 +429,13 @@
             color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 0.06em;
+        }
+
+        .ci-body .ci-synopsis {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-mid);
+            margin-bottom: 6px;
         }
 
         .ci-body .ci-tag + .ci-tag::before {
@@ -765,9 +783,9 @@
             <li><a href="writers.html">Writers</a></li>
             <li><a href="articles.html">Articles</a></li>
             <li><a href="podcast.html" class="active">Podcast</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/support" class="nav-cta">Support</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="support.html" class="nav-cta">Support</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
@@ -781,9 +799,9 @@
         <a href="writers.html">Writers</a>
         <a href="articles.html">Articles</a>
         <a href="podcast.html" class="active">Podcast</a>
-        <a href="/events">Events</a>
-        <a href="/shop">Shop</a>
-        <a href="/support" class="drawer-cta">Support</a>
+        <a href="events.html">Events</a>
+        <a href="shop.html">Shop</a>
+        <a href="support.html" class="drawer-cta">Support</a>
     </div>
     <div class="nav-drawer-overlay"></div>
 
@@ -844,19 +862,19 @@
             <h2>SUBSCRIBE WHEREVER YOU LISTEN</h2>
             <p class="sub-intro">New episodes every two weeks. Free previews on all platforms. Extended cuts and full Counter-Insurgency episodes on Substack.</p>
             <div class="platform-links">
-                <a href="https://podcasts.apple.com/gb/podcast/the-insurgency-with-steve-baker/id1840917142" class="platform-link">
+                <a href="https://podcasts.apple.com/gb/podcast/the-insurgency-with-steve-baker/id1840917142" target="_blank" rel="noopener" class="platform-link">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2.5a2 2 0 110 4 2 2 0 010-4zm-1.5 7.5a1.5 1.5 0 013 0v4.5a1.5 1.5 0 01-3 0V12zm1.5-2.5a4.5 4.5 0 00-4.5 4.5 1 1 0 002 0 2.5 2.5 0 015 0 1 1 0 002 0A4.5 4.5 0 0012 9.5z"/></svg>
                     Apple Podcasts
                 </a>
-                <a href="https://open.spotify.com/show/0DoiptRs2siy0hYt6Mxf8X" class="platform-link">
+                <a href="https://open.spotify.com/show/0DoiptRs2siy0hYt6Mxf8X" target="_blank" rel="noopener" class="platform-link">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.6.6 0 01-.83.2c-2.28-1.393-5.148-1.708-8.528-.936a.6.6 0 11-.27-1.17c3.7-.845 6.876-.481 9.428 1.076a.6.6 0 01.2.83zm1.226-2.716a.75.75 0 01-1.035.248c-2.612-1.605-6.59-2.07-9.68-1.132a.75.75 0 11-.434-1.436c3.527-1.07 7.91-.551 10.9 1.285a.75.75 0 01.249 1.035zm.105-2.828C14.588 8.71 8.84 8.5 5.417 9.536a.9.9 0 11-.522-1.724c3.929-1.19 10.464-.96 14.594 1.354a.9.9 0 01-.572 1.714z"/></svg>
                     Spotify
                 </a>
-                <a href="https://www.youtube.com/@FightingforaFreeFuture" class="platform-link">
+                <a href="https://www.youtube.com/@FightingforaFreeFuture" target="_blank" rel="noopener" class="platform-link">
                     <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.016 3.016 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.016 3.016 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     YouTube
                 </a>
-                <a href="https://voices.fightingforafreefuture.com/podcast" class="platform-link">
+                <a href="https://voices.fightingforafreefuture.com/podcast" target="_blank" rel="noopener" class="platform-link">
                     <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406C1.46 3.53 2.99 2 4.866 2h14.268c1.876 0 3.405 1.53 3.405 3.406v2.836zM1.46 10.812V18.6c0 1.876 1.53 3.4 3.406 3.4h14.268c1.876 0 3.405-1.524 3.405-3.4v-7.788H1.461zM9.71 14.085a.855.855 0 01.856-.856h2.868a.855.855 0 110 1.712h-2.868a.855.855 0 01-.856-.856z"/></svg>
                     Substack
                 </a>
@@ -915,9 +933,9 @@
                 <a href="writers.html">Writers</a>
                 <a href="articles.html">Articles</a>
                 <a href="podcast.html">Podcast</a>
-                <a href="/events">Events</a>
-                <a href="/shop">Shop</a>
-                <a href="/support">Support</a>
+                <a href="events.html">Events</a>
+                <a href="shop.html">Shop</a>
+                <a href="support.html">Support</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -961,17 +979,17 @@
         ];
 
         var COUNTER = [
-            { id: 'ci11', headline: 'THE WAR IN IRAN & BREXIT BETRAYED?', date: '20 Mar 2026', tags: ['Iran', 'Brexit', 'EU Reset'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-war-in-iran-and-brexit-betrayed' },
-            { id: 'ci10', headline: "IS STARMER HIDING BEHIND 'INTERNATIONAL LAW' ON IRAN?", date: '6 Mar 2026', tags: ['Foreign Policy', 'Iran', 'Rule of Law'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/countering-espionage-in-parliament' },
-            { id: 'ci09', headline: "REFORM'S NEW 'SHADOW CABINET'", date: '20 Feb 2026', tags: ['Reform UK', 'Elections', 'Jesse Jackson'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-reform-uks' },
-            { id: 'ci08', headline: 'MANDELSON, STARMER IN CHINA', date: '6 Feb 2026', tags: ['Mandelson', 'China', 'Doctors Strike'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-mandelson' },
-            { id: 'ci07', headline: 'JENRICK JOINS REFORM', date: '23 Jan 2026', tags: ['Reform UK', 'Conservatives', 'Greenland'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-jenrick-joins' },
-            { id: 'ci06', headline: 'THE YEAR IN REVIEW', date: '19 Dec 2025', tags: ['UK Review', 'US Review', '2026 Preview'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-the-year-in' },
-            { id: 'ci05', headline: 'LIMITING TRIAL BY JURY', date: '5 Dec 2025', tags: ['Justice', 'Brexit', 'US Politics'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-limiting-trail' },
-            { id: 'ci04', headline: "BRITAIN'S DEFENCE CRISIS", date: '21 Nov 2025', tags: ['Defence', 'Espionage', 'Starmer'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-britains-defence' },
-            { id: 'ci03', headline: "SOCIALISM IN NEW YORK & REEVES' BUDGET", date: '7 Nov 2025', tags: ['Socialism', 'Budget', 'Inactivity'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-socialism' },
-            { id: 'ci02', headline: "LABOUR'S BREXIT BASHING & TRUMP'S TARIFFS", date: '24 Oct 2025', tags: ['Brexit', 'Trump', 'Trade'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-labours-brexit' },
-            { id: 'ci01', headline: 'CONFERENCE SEASON & WESTMINSTER ESPIONAGE', date: '10 Oct 2025', tags: ['Conferences', 'Espionage', 'Westminster'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-conference' }
+            { id: 'ci11', headline: 'THE WAR IN IRAN & BREXIT BETRAYED?', date: '20 Mar 2026', tags: ['Iran', 'Brexit', 'EU Reset'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-war-in-iran-and-brexit-betrayed', synopsis: 'Military strikes on Iran, Starmer\'s EU reset, and whether Brexit has been quietly abandoned.' },
+            { id: 'ci10', headline: "IS STARMER HIDING BEHIND 'INTERNATIONAL LAW' ON IRAN?", date: '6 Mar 2026', tags: ['Foreign Policy', 'Iran', 'Rule of Law'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/countering-espionage-in-parliament', synopsis: 'The government\'s legalistic defence on Iran, and what it reveals about Starmer\'s foreign policy instincts.' },
+            { id: 'ci09', headline: "REFORM'S NEW 'SHADOW CABINET'", date: '20 Feb 2026', tags: ['Reform UK', 'Elections', 'Jesse Jackson'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-reform-uks', synopsis: 'Reform UK announces its shadow team, plus the Jesse Jackson story and what it means for the right.' },
+            { id: 'ci08', headline: 'MANDELSON, STARMER IN CHINA', date: '6 Feb 2026', tags: ['Mandelson', 'China', 'Doctors Strike'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-mandelson', synopsis: 'Mandelson\'s appointment, Starmer in Beijing, and the junior doctors\' escalation.' },
+            { id: 'ci07', headline: 'JENRICK JOINS REFORM', date: '23 Jan 2026', tags: ['Reform UK', 'Conservatives', 'Greenland'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-jenrick-joins', synopsis: 'Robert Jenrick\'s defection to Reform, Conservative fallout, and Trump\'s Greenland gambit.' },
+            { id: 'ci06', headline: 'THE YEAR IN REVIEW', date: '19 Dec 2025', tags: ['UK Review', 'US Review', '2026 Preview'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-the-year-in', synopsis: 'The defining moments of 2025 in UK and US politics, and what to watch in 2026.' },
+            { id: 'ci05', headline: 'LIMITING TRIAL BY JURY', date: '5 Dec 2025', tags: ['Justice', 'Brexit', 'US Politics'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-limiting-trail', synopsis: 'Government proposals to limit jury trials, the post-Brexit regulatory landscape, and US shifts.' },
+            { id: 'ci04', headline: "BRITAIN'S DEFENCE CRISIS", date: '21 Nov 2025', tags: ['Defence', 'Espionage', 'Starmer'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-britains-defence', synopsis: 'Defence spending gaps, espionage revelations in Westminster, and Starmer under pressure.' },
+            { id: 'ci03', headline: "SOCIALISM IN NEW YORK & REEVES' BUDGET", date: '7 Nov 2025', tags: ['Socialism', 'Budget', 'Inactivity'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-socialism', synopsis: 'Lessons from New York\'s socialist experiment, Reeves\' budget fallout, and economic inactivity.' },
+            { id: 'ci02', headline: "LABOUR'S BREXIT BASHING & TRUMP'S TARIFFS", date: '24 Oct 2025', tags: ['Brexit', 'Trump', 'Trade'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-labours-brexit', synopsis: 'Labour\'s anti-Brexit rhetoric, the tariff threat from a returning Trump, and trade realities.' },
+            { id: 'ci01', headline: 'CONFERENCE SEASON & WESTMINSTER ESPIONAGE', date: '10 Oct 2025', tags: ['Conferences', 'Espionage', 'Westminster'], paid: true, url: 'https://voices.fightingforafreefuture.com/p/the-counter-insurgency-conference', synopsis: 'Party conference takeaways, the Westminster espionage scandal, and what it means for security.' }
         ];
 
         var playSvg = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
@@ -1033,9 +1051,9 @@
                     '</div>' +
                     '<div class="counter-lead-text">' +
                         '<div class="show-tag">Latest Episode</div>' +
-                        '<h3>' + latest.headline + '</h3>' +
+                        '<h3>' + latest.date.toUpperCase() + '</h3>' +
                         '<div class="ep-tags">' + tagsHtml + '</div>' +
-                        '<div class="ep-meta-line">' + latest.date + '</div>' +
+                        '<div class="ep-meta-line">' + latest.synopsis + '</div>' +
                         '<div class="members-note">Full episode · Members only</div>' +
                         '<a href="' + latest.url + '" target="_blank" rel="noopener" class="listen-btn-sm">' + playSvg + ' Listen to Preview</a>' +
                     '</div>' +
@@ -1047,16 +1065,16 @@
                     return '<span class="ci-tag">' + t + '</span>';
                 }).join('');
 
-                return '<div class="counter-list-item">' +
+                return '<a href="' + ep.url + '" target="_blank" rel="noopener" class="counter-list-item">' +
                     '<div class="ci-body">' +
-                        '<h4>' + ep.headline + '</h4>' +
+                        '<h4>' + ep.date + '</h4>' +
+                        '<div class="ci-synopsis">' + ep.synopsis + '</div>' +
                         '<div class="ci-tags">' + tagsLine + '</div>' +
                     '</div>' +
                     '<div class="ci-meta">' +
-                        ep.date +
                         (ep.paid ? '<span class="members-badge">Members</span>' : '') +
                     '</div>' +
-                '</div>';
+                '</a>';
             }).join('');
         }
 

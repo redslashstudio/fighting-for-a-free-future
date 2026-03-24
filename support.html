@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .placeholder-hero {
+            background: var(--navy-deep);
+            color: var(--text-on-dark);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px var(--page-margin);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .placeholder-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(232, 88, 46, 0.07) 0%, transparent 65%);
+            animation: flickerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .placeholder-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .placeholder-inner h1 {
+            font-family: var(--display);
+            font-size: clamp(42px, 6vw, 72px);
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .placeholder-inner p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            margin-bottom: 32px;
+        }
+
+        .placeholder-inner .back-link {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--orange);
+            transition: color 0.2s ease;
+        }
+
+        .placeholder-inner .back-link:hover {
+            color: var(--orange-glow);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav scrolled">
+        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="writers.html">Writers</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="support.html" class="nav-cta active">Support</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="nav-drawer">
+        <a href="index.html">Home</a>
+        <a href="mission.html">Mission</a>
+        <a href="writers.html">Writers</a>
+        <a href="articles.html">Articles</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="events.html">Events</a>
+        <a href="shop.html">Shop</a>
+        <a href="support.html" class="drawer-cta active">Support</a>
+    </div>
+    <div class="nav-drawer-overlay"></div>
+
+    <section class="placeholder-hero">
+        <div class="placeholder-inner">
+            <h1>I'VE NOT GOT ROUND TO THIS (YET)</h1>
+            <p>If you believe in what we're building, you'll soon be able to support it here. For now, a paid Substack subscription is the best way to back the mission.</p>
+            <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener" class="back-link">Subscribe on Substack →</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
+                <div class="footer-purpose" data-live-date></div>
+            </div>
+            <div class="footer-links">
+                <a href="mission.html">Mission</a>
+                <a href="writers.html">Writers</a>
+                <a href="articles.html">Articles</a>
+                <a href="podcast.html">Podcast</a>
+                <a href="events.html">Events</a>
+                <a href="shop.html">Shop</a>
+                <a href="support.html">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@FightingforaFreeFuture" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener">Substack</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

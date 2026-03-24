@@ -628,6 +628,7 @@ img { display: block; max-width: 100%; }
 
     .nav-toggle {
         display: block;
+        margin-left: auto;
     }
 
     .site-masthead {
