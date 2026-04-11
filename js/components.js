@@ -10,16 +10,21 @@
     var page = root.getAttribute('data-page') || '';
     var isHome = page === 'home';
 
-    // --- Nav items ---
+    // --- Nav items (top nav) ---
     var items = [
-        { label: 'Home',     href: 'index.html',       key: 'home' },
-        { label: 'Mission',  href: 'mission.html',     key: 'mission' },
-        { label: 'Topics',   href: 'topics/index.html', key: 'topics' },
-        { label: 'Ask',      href: 'ask.html',         key: 'ask' },
-        { label: 'Writers',  href: 'writers.html',     key: 'writers' },
-        { label: 'Articles', href: 'articles.html',    key: 'articles' },
-        { label: 'Podcast',  href: 'podcast.html',     key: 'podcast' },
-        { label: 'Support',  href: 'support.html',     key: 'support' }
+        { label: 'Home',      href: 'index.html',       key: 'home' },
+        { label: 'Instagram', href: 'social.html',      key: 'social' },
+        { label: 'Topics',    href: 'topics/index.html', key: 'topics' },
+        { label: 'Ask',       href: 'ask.html',         key: 'ask' },
+        { label: 'Support',   href: 'support.html',     key: 'support' }
+    ];
+
+    // --- Footer-only items (all pages still linked from footer) ---
+    var footerOnlyItems = [
+        { label: 'Mission',  href: 'mission.html' },
+        { label: 'Writers',  href: 'writers.html' },
+        { label: 'Articles', href: 'articles.html' },
+        { label: 'Podcast',  href: 'podcast.html' }
     ];
 
     // Build link href — prepend base path
@@ -80,6 +85,7 @@
                     '<a href="' + base + 'mission.html">Mission</a>' +
                     '<a href="' + base + 'topics/index.html">Topics</a>' +
                     '<a href="' + base + 'ask.html">Ask</a>' +
+                    '<a href="' + base + 'social.html">Instagram</a>' +
                     '<a href="' + base + 'writers.html">Writers</a>' +
                     '<a href="' + base + 'articles.html">Articles</a>' +
                     '<a href="' + base + 'podcast.html">Podcast</a>' +
