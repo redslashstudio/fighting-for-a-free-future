@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" data-base="" data-page="strategy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ============================================
+           PAGE-SPECIFIC: Root overrides
+           ============================================ */
+        :root {
+            --section-padding: 72px;
+            --content-max: 720px;
+        }
+
+
+        /* ============================================
+           HERO — STRATEGY
+           ============================================ */
+        .strategy-hero {
+            background: var(--navy-deep);
+            color: var(--text-on-dark);
+            padding: 80px var(--page-margin) 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .strategy-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(232, 88, 46, 0.07) 0%, transparent 65%);
+            animation: flickerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .strategy-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: var(--wide-max);
+        }
+        .strategy-hero .page-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 24px;
+            animation: fadeIn 0.8s ease 0.2s both;
+        }
+        .strategy-hero h1 {
+            font-family: var(--display);
+            font-size: clamp(52px, 8vw, 96px);
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.9s ease 0.4s both;
+        }
+        .strategy-hero .hero-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            animation: fadeIn 0.8s ease 0.7s both;
+        }
+
+
+        /* ============================================
+           GROUPTHINK PROBLEM (Cream — editorial prose)
+           ============================================ */
+        .groupthink-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .prose-block {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+        .prose-block h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 24px;
+        }
+        .prose-block p {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 20px;
+        }
+        .prose-block p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* Pull quote within prose */
+        .prose-pullquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 24px;
+            margin: 32px 0;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--navy-deep);
+        }
+
+
+        /* ============================================
+           THE AUDIENCE (Navy — three-card grid)
+           ============================================ */
+        .audience-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .audience-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .audience-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 14px;
+        }
+        .audience-intro {
+            font-size: 17px;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .audience-card {
+            background: var(--navy-mid);
+            border-radius: var(--card-radius);
+            padding: 32px 28px;
+        }
+        .audience-card .card-num {
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--orange);
+            opacity: 0.8;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .audience-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-on-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .audience-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+        }
+
+        /* Insight quote spanning full width below cards */
+        .audience-quote {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 0 0;
+            border-top: 1px solid var(--navy-accent);
+            margin-top: 16px;
+            position: relative;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .audience-quote .quote-mark {
+            font-family: var(--display);
+            font-size: clamp(80px, 10vw, 140px);
+            line-height: 0.5;
+            color: var(--orange);
+            opacity: 0.7;
+            position: absolute;
+            top: 38px;
+            left: -10px;
+            user-select: none;
+        }
+        .audience-quote blockquote {
+            font-family: var(--body);
+            font-size: clamp(22px, 3vw, 34px);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--text-on-dark);
+            padding-left: 48px;
+            margin: 0 auto 14px;
+        }
+        .audience-quote cite {
+            display: block;
+            padding-left: 48px;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange);
+        }
+
+
+        /* ============================================
+           PERMISSION, NOT PERSUASION (Light blue)
+           ============================================ */
+        .permission-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .permission-header {
+            max-width: var(--wide-max);
+            margin: 0 auto 40px;
+        }
+        .permission-header h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .permission-header p {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            max-width: 640px;
+        }
+        .permission-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0 48px;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .permission-item {
+            padding: 22px 0 22px 44px;
+            border-top: 1px solid var(--light-border);
+            position: relative;
+        }
+        .permission-item:last-child {
+            border-bottom: 1px solid var(--light-border);
+        }
+        .permission-item .permission-num {
+            position: absolute;
+            left: 0;
+            top: 22px;
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--orange);
+            line-height: 1;
+            opacity: 0.8;
+        }
+        .permission-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .permission-item p {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+        }
+
+
+        /* ============================================
+           THREE SYSTEMS (Cream — numbered cards)
+           ============================================ */
+        .systems-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .systems-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .systems-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .systems-intro {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .system-card {
+            background: var(--warm-white);
+            border-radius: var(--card-radius);
+            padding: 32px 28px;
+            border: 1px solid var(--light-border);
+            display: flex;
+            flex-direction: column;
+        }
+        .system-card .system-num {
+            font-family: var(--display);
+            font-size: 36px;
+            color: var(--orange);
+            opacity: 0.7;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .system-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .system-card .system-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+        .system-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-mid);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .system-card .system-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--orange);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: opacity 0.2s ease;
+        }
+        .system-card .system-link:hover {
+            opacity: 0.7;
+        }
+        .system-card .system-link::after {
+            content: ' \2192';
+        }
+
+
+        /* ============================================
+           THE FLYWHEEL (Navy — visual flow)
+           ============================================ */
+        .flywheel-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .flywheel-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .flywheel-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+        }
+        .flywheel-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .flywheel-step {
+            padding: 28px 24px;
+            border-left: 1px solid var(--navy-accent);
+            position: relative;
+        }
+        .flywheel-step:first-child {
+            border-left: none;
+            padding-left: 0;
+        }
+        .flywheel-step .step-num {
+            font-family: var(--display);
+            font-size: 48px;
+            color: var(--orange);
+            opacity: 0.5;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .flywheel-step h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-on-dark);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .flywheel-step p {
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--text-muted-on-dark);
+        }
+        .flywheel-note {
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid var(--navy-accent);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+        }
+        .flywheel-note strong {
+            color: var(--text-on-dark);
+            font-weight: 600;
+        }
+
+
+        /* ============================================
+           WHY THE BRAND MATTERS (Light blue)
+           ============================================ */
+        .brand-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .brand-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .brand-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 28px;
+        }
+        .brand-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .brand-columns p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 18px;
+        }
+        .brand-columns p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        .brand-callout {
+            grid-column: 1 / -1;
+            background: var(--cream);
+            border-radius: var(--card-radius);
+            padding: 32px 36px;
+            margin-top: 16px;
+            border-left: 4px solid var(--orange);
+        }
+        .brand-callout p {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--navy-deep);
+            margin: 0;
+        }
+
+
+        /* ============================================
+           PAGE-SPECIFIC RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .audience-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .permission-list { grid-template-columns: 1fr; }
+            .systems-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .flywheel-steps { grid-template-columns: 1fr 1fr; gap: 0; }
+            .flywheel-step { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-accent); }
+            .flywheel-step:first-child,
+            .flywheel-step:nth-child(2) { border-top: none; }
+            .brand-columns { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .strategy-hero { padding-top: 60px; }
+            .strategy-hero h1 { font-size: clamp(42px, 10vw, 72px); }
+            .flywheel-steps { grid-template-columns: 1fr; }
+            .flywheel-step { border-top: 1px solid var(--navy-accent); }
+            .flywheel-step:first-child { border-top: none; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
+
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="strategy-hero">
+        <div class="strategy-hero-inner">
+            <div class="page-label">The Strategy</div>
+            <h1>BREAKING THROUGH<br>TO THE PEOPLE<br>WHO MATTER</h1>
+            <p class="hero-intro">How Fighting for a Free Future reaches the intellectual and media class that every other political operation fails to move.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE PROBLEM: GROUPTHINK (Cream)
+         ============================================ -->
+    <section class="groupthink-section">
+        <div class="prose-block reveal">
+            <h2>THE GROUPTHINK PROBLEM</h2>
+            <p>The intellectual and media class in Britain is trapped in groupthink. Not because they can't think &mdash; because the social and professional cost of thinking differently is too high.</p>
+            <p>Newsrooms, universities, think tanks, and professional networks all operate within a narrow Overton window. Career incentives punish deviation. The conformity isn't intellectual &mdash; it's protective. People manage their reputations by managing their opinions.</p>
+            <p><strong>This matters because the people Fighting for a Free Future most needs to reach &mdash; the educated, politically curious, media-literate class &mdash; are the ones most locked in.</strong> They won't engage with free-market arguments not because they disagree, but because being <em>seen</em> to engage carries risk. The label "right-wing" is a social penalty, not a policy position.</p>
+        </div>
+
+        <div class="prose-block reveal reveal-delay-1">
+            <div class="prose-pullquote">You can't argue your way through groupthink. Better evidence doesn't work when the barrier isn't ignorance &mdash; it's reputation.</div>
+        </div>
+
+        <div class="prose-block reveal reveal-delay-2">
+            <p>More policy papers won't help when expressing views associated with the right has become socially toxic. In Britain, "right-wing" has become a label people avoid at almost any cost &mdash; regardless of whether their actual views align with it. The mechanisms that maintain this are structural &mdash; career incentives, institutional culture, social signalling &mdash; not intellectual. You have to break through on different terms entirely.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE AUDIENCE (Navy — three cards)
+         ============================================ -->
+    <section class="audience-section">
+        <div class="audience-inner reveal">
+            <h2>WHO WE'RE TRYING TO REACH</h2>
+            <p class="audience-intro">Three distinct groups within the intellectual class &mdash; each trapped by a different mechanism, each requiring a different approach.</p>
+
+            <div class="audience-grid">
+                <div class="audience-card reveal reveal-delay-1">
+                    <div class="card-num">01</div>
+                    <h3>The Politically Curious Professional</h3>
+                    <p>Agrees privately. Won't say so publicly. The conformity is protective, not intellectual. The social risk of being labelled keeps them quiet. They need to see that the interesting conversation is happening somewhere they're not.</p>
+                </div>
+                <div class="audience-card reveal reveal-delay-1">
+                    <div class="card-num">02</div>
+                    <h3>The Media &amp; Academic Commentariat</h3>
+                    <p>Structural capture. They exist in institutions where the Overton window is narrow and career incentives punish deviation. You can't convert them directly &mdash; you have to route around them by building something their audiences read instead.</p>
+                </div>
+                <div class="audience-card reveal reveal-delay-2">
+                    <div class="card-num">03</div>
+                    <h3>The Already Convinced but Cautious</h3>
+                    <p>Think tank staff, financial professionals, economists. They hold these views privately but avoid exposure. They need cover through numbers &mdash; the more visible and credible FFF becomes, the lower the personal cost of association.</p>
+                </div>
+            </div>
+
+            <div class="audience-quote reveal reveal-delay-2">
+                <span class="quote-mark">"</span>
+                <blockquote>You don't break groupthink by arguing better. You break it by building something so visible and high-quality that ignoring it costs more than engaging with it.</blockquote>
+                <cite>The core strategic insight</cite>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         PERMISSION, NOT PERSUASION (Light blue)
+         ============================================ -->
+    <section class="permission-section">
+        <div class="permission-header reveal">
+            <h2>PERMISSION, NOT PERSUASION</h2>
+            <p>The groupthink cracks not when people are persuaded &mdash; but when they realise the interesting conversation is happening somewhere they're not. The intellectual class doesn't need convincing. They need <em>permission</em>.</p>
+        </div>
+
+        <div class="permission-list reveal reveal-delay-1">
+            <div class="permission-item">
+                <span class="permission-num">01</span>
+                <h3>Quality as Permission</h3>
+                <p>Broadcast-quality output changes the social cost of sharing. "Have you seen Fighting for a Free Future?" is a fundamentally different sentence to "have you read Steve Baker's blog?"</p>
+            </div>
+            <div class="permission-item">
+                <span class="permission-num">02</span>
+                <h3>Coalition as Social Proof</h3>
+                <p>Every named contributor normalises the position. The writers page is evidence that serious people hold these views. One well-known figure lending their name matters more than fifty articles.</p>
+            </div>
+            <div class="permission-item">
+                <span class="permission-num">03</span>
+                <h3>Voice as Disruption</h3>
+                <p>The editorial voice breaks groupthink not by being reasonable, but by being interesting enough that people engage despite the social risk. Provocation earns attention that persuasion never could.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THREE CONNECTED SYSTEMS (Cream)
+         ============================================ -->
+    <section class="systems-section">
+        <div class="systems-inner reveal">
+            <h2>THREE CONNECTED SYSTEMS</h2>
+            <p class="systems-intro">So how do you actually break through? Three systems, each designed to work at a different stage &mdash; and each reinforcing the others.</p>
+
+            <div class="systems-grid">
+                <div class="system-card reveal reveal-delay-1">
+                    <div class="system-num">01</div>
+                    <div class="system-subtitle">Earns attention</div>
+                    <h3>Social Distribution</h3>
+                    <p>Branded carousels and position cards in feeds where the audience already lives. Shareable, recognisable, designed to start conversations. Every piece of existing content gets a second life as social content.</p>
+                    <a href="social.html" class="system-link">See the Instagram demo</a>
+                </div>
+                <div class="system-card reveal reveal-delay-1">
+                    <div class="system-num">02</div>
+                    <div class="system-subtitle">Converts attention</div>
+                    <h3>The Knowledge Engine</h3>
+                    <p>FFF's thinking organised by issue, not by date. A newcomer can explore by interest in three minutes. Each topic page is a living explainer that collects everything FFF has said on that subject.</p>
+                    <a href="topics/index.html" class="system-link">Explore the topics</a>
+                </div>
+                <div class="system-card reveal reveal-delay-2">
+                    <div class="system-num">03</div>
+                    <div class="system-subtitle">Deepens engagement</div>
+                    <h3>The Interactive Archive</h3>
+                    <p>Ask a question, get Steve's actual position with sources. AI-powered search across the full 211-post archive. The conversation that makes the audience feel heard.</p>
+                    <a href="ask.html" class="system-link">Ask the archive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE FLYWHEEL (Navy)
+         ============================================ -->
+    <section class="flywheel-section">
+        <div class="flywheel-inner reveal">
+            <h2>THE FLYWHEEL</h2>
+
+            <div class="flywheel-steps">
+                <div class="flywheel-step reveal reveal-delay-1">
+                    <div class="step-num">01</div>
+                    <h3>Social Grabs</h3>
+                    <p>Branded content earns attention in feeds. Recognition builds before anyone visits the website.</p>
+                </div>
+                <div class="flywheel-step reveal reveal-delay-1">
+                    <div class="step-num">02</div>
+                    <h3>Topics Deliver</h3>
+                    <p>Interested visitors land on topic pages that present the argument in three minutes, not thirty.</p>
+                </div>
+                <div class="flywheel-step reveal reveal-delay-1">
+                    <div class="step-num">03</div>
+                    <h3>Archive Deepens</h3>
+                    <p>The curious go further. Ask a question, get a real answer from 211 posts of thinking.</p>
+                </div>
+                <div class="flywheel-step reveal reveal-delay-2">
+                    <div class="step-num">04</div>
+                    <h3>Substack Catches</h3>
+                    <p>The committed subscribe. The paywall sits here &mdash; after value has been delivered, not before.</p>
+                </div>
+            </div>
+
+            <div class="flywheel-note reveal reveal-delay-2">
+                <strong>Every article processed for social also enriches a topic page.</strong> The brand builds in feeds first, then converts on the website. Each piece of content works harder because all three systems share the same engine.
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         WHY THE BRAND MATTERS (Light blue)
+         ============================================ -->
+    <section class="brand-section">
+        <div class="brand-inner reveal">
+            <h2>WHY THE BRAND MATTERS</h2>
+
+            <div class="brand-columns">
+                <div>
+                    <p><strong>The moment something looks like a political campaign or a think tank, the dynamic changes completely.</strong> It doesn't matter how good the argument is. If the presentation triggers "politics," the audience you're trying to reach switches off. They've been trained to.</p>
+                    <p>This is the trap most political operations fall into. They build something that appeals to people who already agree &mdash; and wonder why nobody new shows up. The brand signals insider, institutional, campaigning. The target audience reads those signals instantly and moves on.</p>
+                </div>
+                <div>
+                    <p><strong>Fighting for a Free Future needs to look and feel like a media brand.</strong> Curated. Thought-through. The kind of thing where the identity itself signals that serious people are behind it. Not fussy, not institutional &mdash; but considered in a way that earns credibility before a single word is read.</p>
+                    <p>The social distribution strategy demands it. Content has to be recognisable at thumbnail size, distinctive in a feed, and carry enough visual authority that sharing it feels like a statement of taste, not a political declaration.</p>
+                </div>
+
+                <div class="brand-callout reveal reveal-delay-1">
+                    <p>The brand is the permission mechanism. "Have you seen Fighting for a Free Future?" only works if what they see looks like it belongs to a serious media operation &mdash; not a political campaign. The identity has to do the work before the argument gets a chance to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CTA (Navy-deep)
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <h2 class="cta-title">SEE IT WORKING</h2>
+            <p class="cta-subtitle">Three systems, built and ready to demo. Explore how Fighting for a Free Future turns existing content into cultural momentum.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <a href="social.html" style="display: inline-block; padding: 14px 28px; background: var(--orange); color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: background 0.2s ease;">Instagram</a>
+                <a href="topics/index.html" style="display: inline-block; padding: 14px 28px; background: transparent; color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; border: 1px solid rgba(248,246,242,0.3); transition: background 0.2s ease;">Topics</a>
+                <a href="ask.html" style="display: inline-block; padding: 14px 28px; background: transparent; color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; border: 1px solid rgba(248,246,242,0.3); transition: background 0.2s ease;">Ask the Archive</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <div id="site-footer-root"></div>
+
+
+    <!-- ============================================
+         SHARED JS
+         ============================================ -->
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
