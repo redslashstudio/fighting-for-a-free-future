@@ -12,11 +12,9 @@
 
     // --- Nav items (top nav) ---
     var items = [
-        { label: 'Home',      href: 'index.html',       key: 'home' },
         { label: 'Instagram', href: 'social.html',      key: 'social' },
         { label: 'Topics',    href: 'topics/index.html', key: 'topics' },
-        { label: 'Ask',       href: 'ask.html',         key: 'ask' },
-        { label: 'Support',   href: 'support.html',     key: 'support' }
+        { label: 'Ask',       href: 'ask.html',         key: 'ask' }
     ];
 
     // --- Footer-only items (all pages still linked from footer) ---
