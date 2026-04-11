@@ -25,6 +25,29 @@ RULES:
 
 CONTEXT: Fighting for a Free Future is a political media operation led by Steve Baker. It publishes on Substack under the masthead "Voices for a Free Future" and produces a podcast called "The Insurgency". The editorial position is broadly free-market, libertarian-leaning, and focused on civil liberties, sound money, and limited government.`;
 
+// --- Stop words (filtered from query before keyword scoring) ---
+const STOP_WORDS = new Set([
+    'a', 'an', 'the', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+    'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
+    'should', 'may', 'might', 'shall', 'can', 'need', 'dare', 'ought',
+    'to', 'of', 'in', 'for', 'on', 'with', 'at', 'by', 'from', 'as',
+    'into', 'about', 'between', 'through', 'during', 'before', 'after',
+    'above', 'below', 'up', 'down', 'out', 'off', 'over', 'under',
+    'and', 'but', 'or', 'nor', 'not', 'so', 'yet', 'both', 'either',
+    'neither', 'each', 'every', 'all', 'any', 'few', 'more', 'most',
+    'other', 'some', 'such', 'no', 'only', 'own', 'same', 'than',
+    'too', 'very', 'just', 'because', 'if', 'when', 'where', 'how',
+    'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those',
+    'it', 'its', 'he', 'she', 'they', 'them', 'we', 'you', 'me',
+    'him', 'her', 'us', 'my', 'your', 'his', 'our', 'their',
+    'think', 'thinks', 'thought', 'thoughts', 'tell', 'say', 'says',
+    'said', 'know', 'like', 'get', 'make', 'go', 'see', 'come',
+    'take', 'want', 'give', 'use', 'find', 'here', 'there', 'then',
+    'now', 'also', 'well', 'much', 'even', 'back', 'way', 'long',
+    'does', 'fff', 'steve', 'baker', 'position', 'view', 'views',
+    'written', 'write', 'article', 'articles', 'archive'
+]);
+
 // --- Retrieval ---
 
 function matchQueryToTopics(query) {
@@ -70,7 +93,7 @@ function matchQueryToTopics(query) {
 
 function scorePost(post, query, matchedTopics) {
     const q = query.toLowerCase();
-    const queryTerms = q.split(/\s+/).filter(t => t.length > 1);
+    const queryTerms = q.split(/\s+/).filter(t => t.length > 1 && !STOP_WORDS.has(t));
     let score = 0;
 
     // 1. Topic match (0-10): boost posts assigned to matched topics
@@ -81,8 +104,8 @@ function scorePost(post, query, matchedTopics) {
         }
     }
 
-    // 2. Keyword match in title + subtitle + text (0-8)
-    const searchable = `${post.title} ${post.subtitle} ${post.text}`.toLowerCase();
+    // 2. Keyword match in title + subtitle + text + keywords (0-8)
+    const searchable = `${post.title} ${post.subtitle} ${post.text} ${post.keywords || ''}`.toLowerCase();
     let keywordHits = 0;
     for (const term of queryTerms) {
         if (searchable.includes(term)) keywordHits++;
