@@ -70,7 +70,7 @@ function matchQueryToTopics(query) {
 
 function scorePost(post, query, matchedTopics) {
     const q = query.toLowerCase();
-    const queryTerms = q.split(/\s+/).filter(t => t.length > 2);
+    const queryTerms = q.split(/\s+/).filter(t => t.length > 1);
     let score = 0;
 
     // 1. Topic match (0-10): boost posts assigned to matched topics
@@ -81,18 +81,18 @@ function scorePost(post, query, matchedTopics) {
         }
     }
 
-    // 2. Keyword match in title + subtitle + text (0-5)
+    // 2. Keyword match in title + subtitle + text (0-8)
     const searchable = `${post.title} ${post.subtitle} ${post.text}`.toLowerCase();
     let keywordHits = 0;
     for (const term of queryTerms) {
         if (searchable.includes(term)) keywordHits++;
     }
-    score += Math.min((keywordHits / Math.max(queryTerms.length, 1)) * 5, 5);
+    score += Math.min((keywordHits / Math.max(queryTerms.length, 1)) * 8, 8);
 
-    // Title match bonus
+    // Title match bonus (stronger — title relevance is high signal)
     const titleLower = post.title.toLowerCase();
     for (const term of queryTerms) {
-        if (titleLower.includes(term)) score += 1;
+        if (titleLower.includes(term)) score += 2;
     }
 
     // 3. Author match (0-3)
@@ -128,8 +128,10 @@ function retrievePosts(query, limit = 8) {
 
     scored.sort((a, b) => b.retrievalScore - a.retrievalScore);
 
+    // Always return top results — let Claude decide if they're relevant
+    const top = scored.slice(0, limit).filter(p => p.retrievalScore > 0.5);
     return {
-        posts: scored.slice(0, limit).filter(p => p.retrievalScore > 1),
+        posts: top.length > 0 ? top : scored.slice(0, 3),
         matchedTopics: matchedTopics.slice(0, 3)
     };
 }
@@ -172,7 +174,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { question } = req.body || {};
+    const { question, history } = req.body || {};
 
     if (!question || typeof question !== 'string' || question.trim().length === 0) {
         return res.status(400).json({ error: 'Question is required' });
@@ -181,6 +183,11 @@ export default async function handler(req, res) {
     if (question.length > 500) {
         return res.status(400).json({ error: 'Question too long (max 500 characters)' });
     }
+
+    // Validate history — array of { role, content } pairs, max 10 turns
+    const conversationHistory = Array.isArray(history)
+        ? history.slice(-10).filter(m => m.role && m.content && typeof m.content === 'string')
+        : [];
 
     try {
         const { posts, matchedTopics } = retrievePosts(question.trim());
@@ -195,13 +202,20 @@ export default async function handler(req, res) {
 
         const sourcesBlock = buildSourcesBlock(posts, matchedTopics);
 
+        // Build messages array with conversation history
+        const messages = [
+            ...conversationHistory.map(m => ({
+                role: m.role === 'assistant' ? 'assistant' : 'user',
+                content: m.content
+            })),
+            { role: 'user', content: question.trim() }
+        ];
+
         const message = await client.messages.create({
             model: 'claude-sonnet-4-20250514',
             max_tokens: 1024,
             system: SYSTEM_PROMPT + '\n\nSOURCE MATERIAL:\n' + sourcesBlock,
-            messages: [
-                { role: 'user', content: question.trim() }
-            ]
+            messages
         });
 
         const answer = message.content[0]?.text || 'Unable to generate an answer.';

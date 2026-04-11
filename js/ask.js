@@ -9,6 +9,7 @@ const submitEl = document.getElementById('ask-submit');
 const formEl = document.getElementById('ask-form');
 
 let isLoading = false;
+let conversationHistory = [];
 
 const SUGGESTED_QUESTIONS = [
     "What does Steve Baker think about the Bank of England?",
@@ -64,7 +65,7 @@ async function handleSubmit(e) {
         const res = await fetch('/api/ask', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question })
+            body: JSON.stringify({ question, history: conversationHistory })
         });
 
         const data = await res.json();
@@ -76,6 +77,10 @@ async function handleSubmit(e) {
             addError(data.error || 'Something went wrong. Please try again.');
             return;
         }
+
+        // Track conversation for follow-ups
+        conversationHistory.push({ role: 'user', content: question });
+        conversationHistory.push({ role: 'assistant', content: data.answer });
 
         addAnswer(data.answer, data.sources);
 
