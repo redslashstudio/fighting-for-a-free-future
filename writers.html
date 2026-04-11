@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-base="" data-page="writers">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -375,37 +375,8 @@
     <!-- ============================================
          NAVIGATION
          ============================================ -->
-    <nav class="site-nav scrolled">
-        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="topics/index.html">Topics</a></li>
-            <li><a href="writers.html" class="active">Writers</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="podcast.html">Podcast</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="support.html" class="nav-cta">Support</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile drawer -->
-    <div class="nav-drawer">
-        <a href="index.html">Home</a>
-        <a href="mission.html">Mission</a>
-        <a href="topics/index.html">Topics</a>
-        <a href="writers.html" class="active">Writers</a>
-        <a href="articles.html">Articles</a>
-        <a href="podcast.html">Podcast</a>
-        <a href="events.html">Events</a>
-        <a href="shop.html">Shop</a>
-        <a href="support.html" class="drawer-cta">Support</a>
-    </div>
-    <div class="nav-drawer-overlay"></div>
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
 
 
     <!-- ============================================
@@ -427,7 +398,7 @@
         <!-- STEVE BAKER -->
         <div class="founder-profile reveal">
             <div class="founder-portrait">
-                <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker">
+                <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker" width="600" height="600" loading="lazy">
             </div>
             <div class="founder-info">
                 <span class="founder-role">Chairman</span>
@@ -466,7 +437,7 @@
         <!-- HARRY RICHER -->
         <div class="founder-profile reveal">
             <div class="founder-portrait">
-                <img src="assets/writer-portraits/harry-richer-portrait.png" alt="Harry Richer">
+                <img src="assets/writer-portraits/harry-richer-portrait.png" alt="Harry Richer" width="600" height="600" loading="lazy">
             </div>
             <div class="founder-info">
                 <span class="founder-role">Director</span>
@@ -505,7 +476,7 @@
         <!-- LIAM NOBLE SHEARER -->
         <div class="founder-profile reveal">
             <div class="founder-portrait">
-                <img src="assets/writer-portraits/liam-shearer-portrait.png" alt="Liam Noble Shearer">
+                <img src="assets/writer-portraits/liam-shearer-portrait.png" alt="Liam Noble Shearer" width="600" height="600" loading="lazy">
             </div>
             <div class="founder-info">
                 <span class="founder-role">Operations Manager</span>
@@ -550,7 +521,7 @@
             <!-- VIGGO TERLING -->
             <div class="voice-row reveal">
                 <div class="voice-portrait">
-                    <img src="assets/writer-portraits/viggo-terling-portrait.png" alt="Viggo Terling">
+                    <img src="assets/writer-portraits/viggo-terling-portrait.png" alt="Viggo Terling" width="600" height="600" loading="lazy">
                 </div>
                 <div class="voice-info">
                     <h3 class="voice-name">VIGGO TERLING</h3>
@@ -564,7 +535,7 @@
             <!-- ALBIE AMANKONA -->
             <div class="voice-row reveal reveal-delay-1">
                 <div class="voice-portrait">
-                    <img src="assets/writer-portraits/albie-amankona-portrait.png" alt="Albie Amankona">
+                    <img src="assets/writer-portraits/albie-amankona-portrait.png" alt="Albie Amankona" width="600" height="600" loading="lazy">
                 </div>
                 <div class="voice-info">
                     <h3 class="voice-name">ALBIE AMANKONA</h3>
@@ -579,7 +550,7 @@
             <!-- EVE LUGG -->
             <div class="voice-row reveal reveal-delay-2">
                 <div class="voice-portrait">
-                    <img src="assets/writer-portraits/eve-lugg-portrait.png" alt="Eve Lugg">
+                    <img src="assets/writer-portraits/eve-lugg-portrait.png" alt="Eve Lugg" width="600" height="600" loading="lazy">
                 </div>
                 <div class="voice-info">
                     <h3 class="voice-name">EVE LUGG</h3>
@@ -594,7 +565,7 @@
             <!-- JOHN ABBOTT -->
             <div class="voice-row reveal reveal-delay-3">
                 <div class="voice-portrait">
-                    <img src="assets/writer-portraits/john-abbott-portrait.png" alt="John Abbott">
+                    <img src="assets/writer-portraits/john-abbott-portrait.png" alt="John Abbott" width="600" height="600" loading="lazy">
                 </div>
                 <div class="voice-info">
                     <h3 class="voice-name">JOHN ABBOTT</h3>
@@ -631,7 +602,7 @@
         <div class="cta-inner reveal">
             <h2 class="cta-title">READ THE ARGUMENTS<br>THAT MATTER</h2>
             <p class="cta-subtitle">Free essays, podcast episodes, and sharp commentary. Delivered weekly to people who think Britain deserves better.</p>
-            <form class="cta-form" onsubmit="return false;">
+            <form class="cta-form">
                 <input type="email" placeholder="Your email" aria-label="Email address">
                 <button type="submit">I'm In</button>
             </form>
@@ -643,35 +614,10 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
-                <div class="footer-purpose" data-live-date></div>
-            </div>
-            <div class="footer-links">
-                <a href="mission.html">Mission</a>
-                <a href="topics/index.html">Topics</a>
-                <a href="writers.html">Writers</a>
-                <a href="articles.html">Articles</a>
-                <a href="podcast.html">Podcast</a>
-                <a href="events.html">Events</a>
-                <a href="shop.html">Shop</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
-            <div class="footer-social">
-                <a href="#">YouTube</a>
-                <a href="#">Substack</a>
-                <a href="#">X</a>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer-root"></div>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

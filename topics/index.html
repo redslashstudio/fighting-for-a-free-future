@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-base="../" data-page="topics">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,37 +11,8 @@
     <link rel="stylesheet" href="../css/topics.css">
 </head>
 <body>
-
-    <nav class="site-nav scrolled">
-        <a href="../index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../mission.html">Mission</a></li>
-            <li><a href="index.html" class="active">Topics</a></li>
-            <li><a href="../writers.html">Writers</a></li>
-            <li><a href="../articles.html">Articles</a></li>
-            <li><a href="../podcast.html">Podcast</a></li>
-            <li><a href="../events.html">Events</a></li>
-            <li><a href="../shop.html">Shop</a></li>
-            <li><a href="../support.html" class="nav-cta">Support</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-
-    <div class="nav-drawer">
-        <a href="../index.html">Home</a>
-        <a href="../mission.html">Mission</a>
-        <a href="index.html" class="active">Topics</a>
-        <a href="../writers.html">Writers</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../podcast.html">Podcast</a>
-        <a href="../events.html">Events</a>
-        <a href="../shop.html">Shop</a>
-        <a href="../support.html" class="drawer-cta">Support</a>
-    </div>
-    <div class="nav-drawer-overlay"></div>
+    <div id="site-nav-root"></div>
+    <script src="../js/components.js"></script>
 
 
     <!-- HERO -->
@@ -55,7 +26,7 @@
 
 
     <!-- TOPICS GRID -->
-    <section class="topics-index" style="background: var(--cream); padding: var(--section-padding) var(--page-margin);">
+    <section class="topics-index">
         <div class="topics-index-inner">
             
         <div class="domain-group">
@@ -158,43 +129,16 @@
 
 
     <!-- CTA -->
-    <section class="topic-cta" style="background: var(--navy-deep); color: var(--text-on-dark); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-cta">
         <div class="topic-cta-inner">
             <h2>SUBSCRIBE FOR THE FULL ARCHIVE</h2>
             <p>New writing every week on the issues that matter. Free and paid options.</p>
             <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener" class="cta-button">Subscribe on Substack &rarr;</a>
         </div>
     </section>
+    <div id="site-footer-root"></div>
 
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
-                <div class="footer-purpose" data-live-date></div>
-            </div>
-            <div class="footer-links">
-                <a href="../mission.html">Mission</a>
-                <a href="index.html">Topics</a>
-                <a href="../writers.html">Writers</a>
-                <a href="../articles.html">Articles</a>
-                <a href="../podcast.html">Podcast</a>
-                <a href="../events.html">Events</a>
-                <a href="../shop.html">Shop</a>
-                <a href="../support.html">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
-            <div class="footer-social">
-                <a href="#">YouTube</a>
-                <a href="#">Substack</a>
-                <a href="#">X</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 
 </body>
 </html>

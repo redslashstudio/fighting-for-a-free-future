@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-base="" data-page="home">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" as="image" href="assets/content-images/our-politicians-dont-read-thats-why-v2.jpg">
+    <link rel="dns-prefetch" href="https://substackcdn.com">
     <style>
         /* ============================================
            HOMEPAGE-SPECIFIC STYLES
@@ -789,49 +791,15 @@
         <div class="masthead-rule"></div>
     </header>
 
-    <!-- ============================================
-         NAVIGATION
-         ============================================ -->
-    <nav class="site-nav">
-        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
-        <ul class="nav-links">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="topics/index.html">Topics</a></li>
-            <li><a href="writers.html">Writers</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="podcast.html">Podcast</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="support.html" class="nav-cta">Support</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile nav drawer -->
-    <div class="nav-drawer">
-        <a href="/" class="active">Home</a>
-        <a href="mission.html">Mission</a>
-        <a href="topics/index.html">Topics</a>
-        <a href="writers.html">Writers</a>
-        <a href="articles.html">Articles</a>
-        <a href="podcast.html">Podcast</a>
-        <a href="events.html">Events</a>
-        <a href="shop.html">Shop</a>
-        <a href="support.html" class="drawer-cta">Support</a>
-    </div>
-    <div class="nav-drawer-overlay"></div>
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
 
     <!-- ============================================
          HERO — Cinematic editorial splash
          ============================================ -->
     <a href="https://voices.fightingforafreefuture.com/p/our-politicians-dont-read-thats-why" target="_blank" rel="noopener" class="hero">
         <div class="hero-image-bg">
-            <img src="assets/content-images/our-politicians-dont-read-thats-why-v2.jpg" alt="Our Politicians Don't Read">
+            <img src="assets/content-images/our-politicians-dont-read-thats-why-v2.jpg" alt="Our Politicians Don't Read" width="2624" height="1632">
         </div>
         <div class="hero-content">
             <span class="hero-tag">Parliament · Ideas</span>
@@ -855,7 +823,7 @@
             <!-- Lead card -->
             <article class="latest-lead reveal reveal-delay-1">
                 <div class="lead-img">
-                    <img src="assets/content-images/tyranny-of-the-month-hmrc-powers-v2.jpg" alt="Tyranny of the Month: HMRC Powers">
+                    <img src="assets/content-images/tyranny-of-the-month-hmrc-powers-v2.jpg" alt="Tyranny of the Month: HMRC Powers" width="2240" height="1617" loading="lazy">
                 </div>
                 <div class="cat">Taxes · Liberty</div>
                 <h3><a href="https://voices.fightingforafreefuture.com/p/tyranny-of-the-month-hmrc-powers" target="_blank" rel="noopener">Tyranny of the Month: HMRC's Unchecked Powers</a></h3>
@@ -993,7 +961,7 @@
             <!-- Lead episode — The Insurgency flagship -->
             <div class="podcast-lead reveal reveal-delay-1">
                 <div class="ep-artwork">
-                    <img src="assets/podcast/insurgency/ep13.png" alt="Why British Politics So Often Lets Voters Down">
+                    <img src="assets/podcast/insurgency/ep13.png" alt="Why British Politics So Often Lets Voters Down" width="1500" height="1500" loading="lazy">
                 </div>
                 <div class="ep-show-tag">The Insurgency · Latest</div>
                 <div class="ep-desc">Kevin Schofield on why the political system disappoints constituents — expectation management, fiscal pressures, and the state of journalism.</div>
@@ -1010,7 +978,7 @@
             <div class="podcast-list reveal reveal-delay-2">
                 <div class="podcast-list-item">
                     <div class="ep-artwork-sm">
-                        <img src="assets/podcast/counter-insurgency/ci11.png" alt="The War in Iran & Brexit Betrayed?">
+                        <img src="assets/podcast/counter-insurgency/ci11.png" alt="The War in Iran & Brexit Betrayed?" width="1500" height="1500" loading="lazy">
                     </div>
                     <div class="ep-body">
                         <div class="ep-show-tag">The Counter-Insurgency</div>
@@ -1025,7 +993,7 @@
                 </div>
                 <div class="podcast-list-item">
                     <div class="ep-artwork-sm">
-                        <img src="assets/podcast/counter-insurgency/ci10.png" alt="Is Keir Starmer Hiding Behind International Law on Iran?">
+                        <img src="assets/podcast/counter-insurgency/ci10.png" alt="Is Keir Starmer Hiding Behind International Law on Iran?" width="1500" height="1500" loading="lazy">
                     </div>
                     <div class="ep-body">
                         <div class="ep-show-tag">The Counter-Insurgency</div>
@@ -1040,7 +1008,7 @@
                 </div>
                 <div class="podcast-list-item">
                     <div class="ep-artwork-sm">
-                        <img src="assets/podcast/insurgency/ep12.png" alt="How Vibe-Based Politics Ends in Collapse">
+                        <img src="assets/podcast/insurgency/ep12.png" alt="How Vibe-Based Politics Ends in Collapse" width="1500" height="1500" loading="lazy">
                     </div>
                     <div class="ep-body">
                         <div class="ep-show-tag">The Insurgency</div>
@@ -1101,31 +1069,31 @@
             </div>
             <div class="writers-strip">
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker">
+                    <img src="assets/writer-portraits/steve-baker-portrait.png" alt="Steve Baker" width="600" height="600" loading="lazy">
                     <span class="writer-name">Steve Baker</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/harry-richer-portrait.png" alt="Harry Richer">
+                    <img src="assets/writer-portraits/harry-richer-portrait.png" alt="Harry Richer" width="600" height="600" loading="lazy">
                     <span class="writer-name">Harry Richer</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/liam-shearer-portrait.png" alt="Liam Noble Shearer">
+                    <img src="assets/writer-portraits/liam-shearer-portrait.png" alt="Liam Noble Shearer" width="600" height="600" loading="lazy">
                     <span class="writer-name">Liam Noble Shearer</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/viggo-terling-portrait.png" alt="Viggo Terling">
+                    <img src="assets/writer-portraits/viggo-terling-portrait.png" alt="Viggo Terling" width="600" height="600" loading="lazy">
                     <span class="writer-name">Viggo Terling</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/albie-amankona-portrait.png" alt="Albie Amankona">
+                    <img src="assets/writer-portraits/albie-amankona-portrait.png" alt="Albie Amankona" width="600" height="600" loading="lazy">
                     <span class="writer-name">Albie Amankona</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/eve-lugg-portrait.png" alt="Eve Lugg">
+                    <img src="assets/writer-portraits/eve-lugg-portrait.png" alt="Eve Lugg" width="600" height="600" loading="lazy">
                     <span class="writer-name">Eve Lugg</span>
                 </a>
                 <a href="writers.html" class="writer-link">
-                    <img src="assets/writer-portraits/john-abbott-portrait.png" alt="John Abbott">
+                    <img src="assets/writer-portraits/john-abbott-portrait.png" alt="John Abbott" width="600" height="600" loading="lazy">
                     <span class="writer-name">John Abbott</span>
                 </a>
             </div>
@@ -1142,7 +1110,7 @@
             <div class="signup-text">
                 <p>One email a week. The essays, the podcast, the arguments that matter. Free. No spam. Unsubscribe anytime.</p>
             </div>
-            <form class="signup-form" onsubmit="return false;">
+            <form class="signup-form">
                 <input type="email" placeholder="Your email" aria-label="Email address">
                 <button type="submit">I'm In</button>
             </form>
@@ -1153,34 +1121,8 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
-                <div class="footer-purpose" data-live-date></div>
-            </div>
-            <div class="footer-links">
-                <a href="mission.html">Mission</a>
-                <a href="topics/index.html">Topics</a>
-                <a href="writers.html">Writers</a>
-                <a href="articles.html">Articles</a>
-                <a href="podcast.html">Podcast</a>
-                <a href="events.html">Events</a>
-                <a href="shop.html">Shop</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© 2026 Fighting for a Free Future. All rights reserved.</span>
-            <div class="footer-social">
-                <a href="#" aria-label="YouTube">YouTube</a>
-                <a href="#" aria-label="Substack">Substack</a>
-                <a href="#" aria-label="X/Twitter">X</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <div id="site-footer-root"></div>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-base="" data-page="support">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,37 +68,8 @@
     </style>
 </head>
 <body>
-
-    <nav class="site-nav scrolled">
-        <a href="index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="topics/index.html">Topics</a></li>
-            <li><a href="writers.html">Writers</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="podcast.html">Podcast</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="support.html" class="nav-cta active">Support</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-
-    <div class="nav-drawer">
-        <a href="index.html">Home</a>
-        <a href="mission.html">Mission</a>
-        <a href="topics/index.html">Topics</a>
-        <a href="writers.html">Writers</a>
-        <a href="articles.html">Articles</a>
-        <a href="podcast.html">Podcast</a>
-        <a href="events.html">Events</a>
-        <a href="shop.html">Shop</a>
-        <a href="support.html" class="drawer-cta active">Support</a>
-    </div>
-    <div class="nav-drawer-overlay"></div>
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
 
     <section class="placeholder-hero">
         <div class="placeholder-inner">
@@ -107,35 +78,9 @@
             <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener" class="back-link">Subscribe on Substack →</a>
         </div>
     </section>
+    <div id="site-footer-root"></div>
 
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
-                <div class="footer-purpose" data-live-date></div>
-            </div>
-            <div class="footer-links">
-                <a href="mission.html">Mission</a>
-                <a href="topics/index.html">Topics</a>
-                <a href="writers.html">Writers</a>
-                <a href="articles.html">Articles</a>
-                <a href="podcast.html">Podcast</a>
-                <a href="events.html">Events</a>
-                <a href="shop.html">Shop</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
-            <div class="footer-social">
-                <a href="https://www.youtube.com/@FightingforaFreeFuture" target="_blank" rel="noopener">YouTube</a>
-                <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener">Substack</a>
-                <a href="#">X</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

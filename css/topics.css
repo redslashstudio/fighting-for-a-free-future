@@ -60,6 +60,30 @@
 }
 
 
+/* --- Section backgrounds & padding --- */
+.topic-position,
+.topic-explore,
+.topics-index {
+    background: var(--cream);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-evidence {
+    background: var(--light-blue);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-arguments,
+.topic-cta {
+    background: var(--navy-deep);
+    color: var(--text-on-dark);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-podcast {
+    background: var(--navy);
+    color: var(--text-on-dark);
+    padding: var(--section-padding) var(--page-margin);
+}
+
+
 /* --- 60-Second Position --- */
 .topic-position-inner {
     max-width: 720px;
@@ -157,9 +181,7 @@
 
 /* --- Section Bars (reuse pattern from articles) --- */
 .topic-arguments-inner,
-.topic-news-inner,
 .topic-podcast-inner,
-.topic-contributors-inner,
 .topic-explore-inner,
 .topic-cta-inner {
     max-width: var(--content-max);
@@ -175,12 +197,6 @@
     font-size: 34px;
     letter-spacing: 0.04em;
     line-height: 1;
-}
-.section-intro {
-    font-size: 16px;
-    color: var(--text-muted-on-dark);
-    margin-bottom: 32px;
-    margin-top: -16px;
 }
 
 
@@ -333,7 +349,6 @@
 }
 
 /* On light backgrounds */
-.topic-news .card-meta,
 .topic-explore .card-meta {
     color: var(--text-mid);
 }
@@ -377,52 +392,7 @@
     overflow: hidden;
 }
 
-/* Light-background overrides for cards */
-.topic-news .card-title {
-    color: var(--text-dark);
-}
-.topic-news .card-standfirst {
-    color: var(--text-mid);
-}
 
-
-/* --- Compact List (In the News) --- */
-.compact-list {
-    display: flex;
-    flex-direction: column;
-}
-.compact-item {
-    display: block;
-    text-decoration: none;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--light-border);
-    transition: background 0.2s ease;
-}
-.compact-item:first-child {
-    padding-top: 0;
-}
-.compact-item:hover {
-    background: rgba(0,0,0,0.02);
-    padding-left: 8px;
-}
-.compact-meta {
-    display: flex;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-mid);
-    margin-bottom: 4px;
-}
-.compact-title {
-    font-family: var(--display);
-    font-size: 22px;
-    letter-spacing: 0.03em;
-    line-height: 1.1;
-    color: var(--text-dark);
-}
-.compact-item:hover .compact-title {
-    color: var(--orange);
-}
 
 
 /* --- Podcast Grid --- */
@@ -430,26 +400,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
-}
-
-
-/* --- Contributors --- */
-.contributors-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 24px;
-}
-.contributor-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 40px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy-deep);
 }
 
 

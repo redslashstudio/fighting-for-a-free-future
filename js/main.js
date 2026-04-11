@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
         mastheadObserver.observe(masthead);
     }
 
+    // --- Prevent placeholder form submission ---
+    document.querySelectorAll('.cta-form, .signup-form').forEach(function(form) {
+        form.addEventListener('submit', function(e) { e.preventDefault(); });
+    });
+
     // --- Mobile nav drawer ---
     var toggle = document.querySelector('.nav-toggle');
     var drawer = document.querySelector('.nav-drawer');

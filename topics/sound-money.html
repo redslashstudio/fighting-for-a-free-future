@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-base="../" data-page="topics">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,39 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/topics.css">
+    <link rel="dns-prefetch" href="https://substackcdn.com">
+    <link rel="dns-prefetch" href="https://substack-post-media.s3.amazonaws.com">
 </head>
 <body>
-
-    <nav class="site-nav scrolled">
-        <a href="../index.html" class="nav-compact-title">FIGHTING FOR A FREE FUTURE</a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../mission.html">Mission</a></li>
-            <li><a href="index.html" class="active">Topics</a></li>
-            <li><a href="../writers.html">Writers</a></li>
-            <li><a href="../articles.html">Articles</a></li>
-            <li><a href="../podcast.html">Podcast</a></li>
-            <li><a href="../events.html">Events</a></li>
-            <li><a href="../shop.html">Shop</a></li>
-            <li><a href="../support.html" class="nav-cta">Support</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-
-    <div class="nav-drawer">
-        <a href="../index.html">Home</a>
-        <a href="../mission.html">Mission</a>
-        <a href="index.html" class="active">Topics</a>
-        <a href="../writers.html">Writers</a>
-        <a href="../articles.html">Articles</a>
-        <a href="../podcast.html">Podcast</a>
-        <a href="../events.html">Events</a>
-        <a href="../shop.html">Shop</a>
-        <a href="../support.html" class="drawer-cta">Support</a>
-    </div>
-    <div class="nav-drawer-overlay"></div>
+    <div id="site-nav-root"></div>
+    <script src="../js/components.js"></script>
 
 
     <!-- HERO -->
@@ -56,7 +29,7 @@
 
     
     <!-- 60-SECOND POSITION -->
-    <section class="topic-position" style="background: var(--cream); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-position">
         <div class="topic-position-inner">
             <div class="position-label">THE 60-SECOND POSITION</div>
             <div class="position-text">
@@ -70,7 +43,7 @@
     </section>
     
     <!-- KEY EVIDENCE -->
-    <section class="topic-evidence" style="background: var(--light-blue); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-evidence">
         <div class="topic-evidence-inner">
             <div class="section-bar"><h2>Key Evidence</h2></div>
             <ol class="evidence-list">
@@ -99,7 +72,7 @@
     </section>
     
     <!-- ON THE SUBSTACK -->
-    <section class="topic-arguments" style="background: var(--navy-deep); color: var(--text-on-dark); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-arguments">
         <div class="topic-arguments-inner">
             <div class="section-bar"><h2>On the Substack</h2></div>
             <div class="substack-layout">
@@ -179,7 +152,7 @@
     </section>
     
     <!-- ON THE PODCAST -->
-    <section class="topic-podcast" style="background: var(--navy); color: var(--text-on-dark); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-podcast">
         <div class="topic-podcast-inner">
             <div class="section-bar"><h2>On the Podcast</h2></div>
             <div class="podcast-grid">
@@ -199,7 +172,7 @@
     </section>
     
     <!-- EXPLORE MORE -->
-    <section class="topic-explore" style="background: var(--cream); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-explore">
         <div class="topic-explore-inner">
             <div class="section-bar"><h2>Explore More</h2></div>
             <div class="explore-links">
@@ -214,43 +187,16 @@
 
 
     <!-- CTA -->
-    <section class="topic-cta" style="background: var(--navy-deep); color: var(--text-on-dark); padding: var(--section-padding) var(--page-margin);">
+    <section class="topic-cta">
         <div class="topic-cta-inner">
             <h2>READ THE FULL ARCHIVE</h2>
             <p>These articles are published on Substack. Subscribe for the complete archive and new writing every week.</p>
             <a href="https://voices.fightingforafreefuture.com" target="_blank" rel="noopener" class="cta-button">Subscribe on Substack &rarr;</a>
         </div>
     </section>
+    <div id="site-footer-root"></div>
 
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo">FIGHTING FOR A FREE FUTURE</div>
-                <div class="footer-purpose" data-live-date></div>
-            </div>
-            <div class="footer-links">
-                <a href="../mission.html">Mission</a>
-                <a href="index.html">Topics</a>
-                <a href="../writers.html">Writers</a>
-                <a href="../articles.html">Articles</a>
-                <a href="../podcast.html">Podcast</a>
-                <a href="../events.html">Events</a>
-                <a href="../shop.html">Shop</a>
-                <a href="../support.html">Support</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Fighting for a Free Future. All rights reserved.</span>
-            <div class="footer-social">
-                <a href="#">YouTube</a>
-                <a href="#">Substack</a>
-                <a href="#">X</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 
 </body>
 </html>

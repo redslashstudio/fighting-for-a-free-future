@@ -15,10 +15,10 @@
         { label: 'Home',     href: 'index.html',       key: 'home' },
         { label: 'Mission',  href: 'mission.html',     key: 'mission' },
         { label: 'Topics',   href: 'topics/index.html', key: 'topics' },
+        { label: 'Ask',      href: 'ask.html',         key: 'ask' },
         { label: 'Writers',  href: 'writers.html',     key: 'writers' },
         { label: 'Articles', href: 'articles.html',    key: 'articles' },
         { label: 'Podcast',  href: 'podcast.html',     key: 'podcast' },
-        { label: 'Ask',      href: 'ask.html',         key: 'ask' },
         { label: 'Support',  href: 'support.html',     key: 'support' }
     ];
 
@@ -79,10 +79,10 @@
                 '<div class="footer-links">' +
                     '<a href="' + base + 'mission.html">Mission</a>' +
                     '<a href="' + base + 'topics/index.html">Topics</a>' +
+                    '<a href="' + base + 'ask.html">Ask</a>' +
                     '<a href="' + base + 'writers.html">Writers</a>' +
                     '<a href="' + base + 'articles.html">Articles</a>' +
                     '<a href="' + base + 'podcast.html">Podcast</a>' +
-                    '<a href="' + base + 'ask.html">Ask</a>' +
                     '<a href="' + base + 'support.html">Support</a>' +
                 '</div>' +
             '</div>' +
