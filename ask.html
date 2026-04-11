@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-base="" data-page="ask">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask the Archive — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ask.css">
+</head>
+<body>
+
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
+
+
+    <!-- HERO -->
+    <section class="ask-hero">
+        <div class="ask-hero-inner">
+            <h1>ASK THE ARCHIVE</h1>
+            <p>Search 200+ articles and podcast episodes. Ask a question, get an answer grounded in what's actually been written — with links to the sources.</p>
+            <span class="ask-beta">Beta</span>
+        </div>
+    </section>
+
+
+    <!-- CHAT -->
+    <section class="ask-container">
+        <div class="ask-inner">
+            <div id="ask-suggestions" class="ask-suggestions"></div>
+            <div id="ask-messages" class="ask-messages"></div>
+        </div>
+    </section>
+
+
+    <!-- INPUT BAR -->
+    <section class="ask-input-section">
+        <form id="ask-form" class="ask-input-bar">
+            <div class="ask-input-inner">
+                <input
+                    id="ask-input"
+                    class="ask-input"
+                    type="text"
+                    placeholder="Ask a question about FFF's positions..."
+                    autocomplete="off"
+                    maxlength="500"
+                >
+                <button id="ask-submit" class="ask-submit" type="submit" aria-label="Send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </section>
+
+
+    <div id="site-footer-root"></div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/ask.js" defer></script>
+</body>
+</html>
