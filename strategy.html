@@ -361,7 +361,7 @@
 
 
         /* ============================================
-           THE FLYWHEEL (Navy — visual flow)
+           THE FLYWHEEL (Navy — circular diagram)
            ============================================ */
         .flywheel-section {
             background: var(--navy);
@@ -372,58 +372,85 @@
             max-width: var(--wide-max);
             margin: 0 auto;
         }
-        .flywheel-inner h2 {
+        .flywheel-inner > h2 {
             font-family: var(--display);
             font-size: 44px;
             letter-spacing: 0.04em;
             line-height: 0.95;
             margin-bottom: 28px;
         }
-        .flywheel-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            max-width: var(--wide-max);
-            margin: 0 auto;
-        }
-        .flywheel-step {
-            padding: 28px 24px;
-            border-left: 1px solid var(--navy-accent);
+
+        /* Ring container */
+        .flywheel-ring {
             position: relative;
+            width: 520px;
+            height: 520px;
+            margin: 0 auto 48px;
         }
-        .flywheel-step:first-child {
-            border-left: none;
-            padding-left: 0;
+
+        /* Circular track — SVG arrows */
+        .flywheel-track {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
         }
-        .flywheel-step .step-num {
+
+        /* Node positioning — 4 nodes around a circle */
+        .flywheel-node {
+            position: absolute;
+            width: 180px;
+            text-align: center;
+        }
+        /* Top — Social */
+        .flywheel-node--social {
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Right — Topics */
+        .flywheel-node--topics {
+            top: 50%; right: 0;
+            transform: translateY(-50%);
+        }
+        /* Bottom — Archive */
+        .flywheel-node--archive {
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Left — Substack */
+        .flywheel-node--substack {
+            top: 50%; left: 0;
+            transform: translateY(-50%);
+        }
+
+        .flywheel-node .node-label {
             font-family: var(--display);
-            font-size: 48px;
-            color: var(--orange);
-            opacity: 0.5;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-        .flywheel-step h3 {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0.04em;
             color: var(--text-on-dark);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            margin-bottom: 4px;
         }
-        .flywheel-step p {
-            font-size: 15px;
-            line-height: 1.55;
+        .flywheel-node .node-role {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 6px;
+        }
+        .flywheel-node .node-desc {
+            font-size: 14px;
+            line-height: 1.45;
             color: var(--text-muted-on-dark);
         }
+
+        /* Note below the ring */
         .flywheel-note {
-            margin-top: 40px;
-            padding-top: 28px;
-            border-top: 1px solid var(--navy-accent);
+            text-align: center;
             font-size: 17px;
             line-height: 1.6;
             color: var(--text-muted-on-dark);
             max-width: 640px;
+            margin: 0 auto;
         }
         .flywheel-note strong {
             color: var(--text-on-dark);
@@ -489,19 +516,36 @@
             .audience-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
             .permission-list { grid-template-columns: 1fr; }
             .systems-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
-            .flywheel-steps { grid-template-columns: 1fr 1fr; gap: 0; }
-            .flywheel-step { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-accent); }
-            .flywheel-step:first-child,
-            .flywheel-step:nth-child(2) { border-top: none; }
             .brand-columns { grid-template-columns: 1fr; }
+        }
+
+        /* Flywheel: stack to vertical on smaller screens */
+        @media (max-width: 640px) {
+            .flywheel-ring {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .flywheel-track { display: none; }
+            .flywheel-node {
+                position: static;
+                transform: none;
+                width: 100%;
+                text-align: left;
+                padding: 20px 0 20px 20px;
+                border-left: 2px solid var(--navy-accent);
+            }
+            .flywheel-node:last-child {
+                border-left-color: var(--orange);
+            }
+            .flywheel-node .node-label { font-size: 20px; }
         }
 
         @media (max-width: 768px) {
             .strategy-hero { padding-top: 60px; }
             .strategy-hero h1 { font-size: clamp(42px, 10vw, 72px); }
-            .flywheel-steps { grid-template-columns: 1fr; }
-            .flywheel-step { border-top: 1px solid var(--navy-accent); }
-            .flywheel-step:first-child { border-top: none; }
         }
 
     </style>
@@ -654,31 +698,56 @@
         <div class="flywheel-inner reveal">
             <h2>THE FLYWHEEL</h2>
 
-            <div class="flywheel-steps">
-                <div class="flywheel-step reveal reveal-delay-1">
-                    <div class="step-num">01</div>
-                    <h3>Social Grabs</h3>
-                    <p>Branded content earns attention in feeds. Recognition builds before anyone visits the website.</p>
+            <div class="flywheel-ring">
+                <!-- Circular arrows connecting the four nodes -->
+                <svg class="flywheel-track" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                            <path d="M0,0 L8,3 L0,6" fill="#E8582E" />
+                        </marker>
+                    </defs>
+                    <!-- Short arcs on a wider orbit (r=220), same arc length -->
+                    <!-- Top-right: Social → Topics -->
+                    <path d="M345,120 A220,220 0 0,1 410,190" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#arrow)" />
+                    <!-- Right-bottom: Topics → Archive -->
+                    <path d="M410,330 A220,220 0 0,1 345,400" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#arrow)" />
+                    <!-- Bottom-left: Archive → Substack -->
+                    <path d="M175,400 A220,220 0 0,1 110,330" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#arrow)" />
+                    <!-- Left-top: Substack → Social -->
+                    <path d="M110,190 A220,220 0 0,1 175,120" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#arrow)" />
+                </svg>
+
+                <!-- Top: Social -->
+                <div class="flywheel-node flywheel-node--social">
+                    <div class="node-role">Earns attention</div>
+                    <div class="node-label">SOCIAL</div>
+                    <div class="node-desc">Branded content in feeds where the audience already lives.</div>
                 </div>
-                <div class="flywheel-step reveal reveal-delay-1">
-                    <div class="step-num">02</div>
-                    <h3>Topics Deliver</h3>
-                    <p>Interested visitors land on topic pages that present the argument in three minutes, not thirty.</p>
+
+                <!-- Right: Topics -->
+                <div class="flywheel-node flywheel-node--topics">
+                    <div class="node-role">Converts attention</div>
+                    <div class="node-label">TOPICS</div>
+                    <div class="node-desc">The argument in three minutes, organised by issue.</div>
                 </div>
-                <div class="flywheel-step reveal reveal-delay-1">
-                    <div class="step-num">03</div>
-                    <h3>Archive Deepens</h3>
-                    <p>The curious go further. Ask a question, get a real answer from 211 posts of thinking.</p>
+
+                <!-- Bottom: Archive -->
+                <div class="flywheel-node flywheel-node--archive">
+                    <div class="node-role">Deepens engagement</div>
+                    <div class="node-label">ARCHIVE</div>
+                    <div class="node-desc">Ask a question, get a real answer from 211 posts.</div>
                 </div>
-                <div class="flywheel-step reveal reveal-delay-2">
-                    <div class="step-num">04</div>
-                    <h3>Substack Catches</h3>
-                    <p>The committed subscribe. The paywall sits here &mdash; after value has been delivered, not before.</p>
+
+                <!-- Left: Substack -->
+                <div class="flywheel-node flywheel-node--substack">
+                    <div class="node-role">Catches the committed</div>
+                    <div class="node-label">SUBSTACK</div>
+                    <div class="node-desc">Subscribers generate new content that feeds back into social.</div>
                 </div>
             </div>
 
-            <div class="flywheel-note reveal reveal-delay-2">
-                <strong>Every article processed for social also enriches a topic page.</strong> The brand builds in feeds first, then converts on the website. Each piece of content works harder because all three systems share the same engine.
+            <div class="flywheel-note reveal reveal-delay-1">
+                <strong>Every new article or podcast episode re-enters the cycle.</strong> Substack content becomes social assets. Social drives visitors to topics. Topics deepen into the archive. The archive converts to subscribers. The loop never stops &mdash; each piece of content makes the whole system stronger.
             </div>
         </div>
     </section>
