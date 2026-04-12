@@ -531,6 +531,196 @@
 }
 
 
+/* --- Greyed-out index cards (no page yet) --- */
+.topic-index-card--pending {
+    display: block;
+    padding: 28px 24px;
+    background: white;
+    border-radius: var(--card-radius);
+    border-left: 3px solid var(--light-border);
+    opacity: 0.35;
+    cursor: default;
+}
+.topic-index-card--pending h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+.topic-index-card--pending .topic-index-tagline {
+    color: #bbb;
+}
+.topic-index-card--pending .topic-index-count {
+    color: #bbb;
+}
+
+
+/* --- Position Topline (shared by beats, narrative, questions) --- */
+.position-topline p {
+    font-family: var(--body);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.65;
+    color: var(--text-dark);
+}
+
+
+/* --- BEATS FORMAT --- */
+.topic-beats {
+    background: var(--light-blue);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-beats-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.beat-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--light-border);
+}
+.beat-item:first-child {
+    padding-top: 0;
+}
+.beat-item:last-child {
+    border-bottom: none;
+}
+.beat-number {
+    font-family: var(--display);
+    font-size: 48px;
+    line-height: 1;
+    color: var(--orange);
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+}
+.beat-title {
+    font-family: var(--display);
+    font-size: 26px;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+}
+.beat-body {
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+.beat-source {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    font-style: normal;
+}
+
+
+/* --- NARRATIVE FORMAT --- */
+.topic-narrative {
+    background: var(--light-blue);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-narrative-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.narrative-text p {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.narrative-text p:last-child {
+    margin-bottom: 0;
+}
+.narrative-text em {
+    font-style: italic;
+}
+.narrative-text strong {
+    font-weight: 700;
+    color: var(--navy-deep);
+}
+.narrative-sources {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-border);
+}
+.narrative-sources-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+}
+.narrative-source {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+    font-style: normal;
+    margin-bottom: 6px;
+}
+.narrative-source:last-child {
+    margin-bottom: 0;
+}
+
+
+/* --- QUESTIONS FORMAT --- */
+.topic-questions {
+    background: var(--light-blue);
+    padding: var(--section-padding) var(--page-margin);
+}
+.topic-questions-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.question-block {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--light-border);
+}
+.question-block:first-child {
+    padding-top: 0;
+}
+.question-block:last-child {
+    border-bottom: none;
+}
+.question-heading {
+    font-family: var(--display);
+    font-size: 30px;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    color: var(--orange);
+    margin-bottom: 16px;
+}
+.question-body {
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+}
+.question-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+.question-source {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    font-style: normal;
+}
+
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
     .substack-layout {
@@ -565,11 +755,30 @@
     .position-text p {
         font-size: 16px;
     }
+    .position-topline p {
+        font-size: 17px;
+    }
     .evidence-item {
         gap: 14px;
     }
     .evidence-item::before {
         font-size: 26px;
         width: 26px;
+    }
+    .beat-item {
+        gap: 16px;
+    }
+    .beat-number {
+        font-size: 36px;
+        width: 32px;
+    }
+    .beat-title {
+        font-size: 22px;
+    }
+    .question-heading {
+        font-size: 24px;
+    }
+    .narrative-text p {
+        font-size: 16px;
     }
 }

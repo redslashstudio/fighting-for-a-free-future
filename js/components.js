@@ -12,10 +12,10 @@
 
     // --- Nav items (top nav) ---
     var items = [
-        { label: 'Strategy',  href: 'strategy.html',    key: 'strategy' },
         { label: 'Instagram', href: 'social.html',      key: 'social' },
         { label: 'Topics',    href: 'topics/index.html', key: 'topics' },
         { label: 'Ask',       href: 'ask.html',         key: 'ask' },
+        { label: 'Strategy',  href: 'strategy.html',    key: 'strategy' },
         { label: 'Coalition', href: 'coalition.html',   key: 'coalition' }
     ];
 
