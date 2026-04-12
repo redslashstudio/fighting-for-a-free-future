@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" data-base="" data-page="coalition">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coalition — Fighting for a Free Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ============================================
+           PAGE-SPECIFIC: Root overrides
+           ============================================ */
+        :root {
+            --section-padding: 72px;
+            --content-max: 720px;
+        }
+
+
+        /* ============================================
+           HERO — COALITION
+           ============================================ */
+        .coalition-hero {
+            background: var(--navy-deep);
+            color: var(--text-on-dark);
+            padding: 80px var(--page-margin) 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .coalition-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(232, 88, 46, 0.07) 0%, transparent 65%);
+            animation: flickerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .coalition-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: var(--wide-max);
+        }
+        .coalition-hero .page-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 24px;
+            animation: fadeIn 0.8s ease 0.2s both;
+        }
+        .coalition-hero h1 {
+            font-family: var(--display);
+            font-size: clamp(52px, 8vw, 96px);
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.9s ease 0.4s both;
+        }
+        .coalition-hero .hero-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            animation: fadeIn 0.8s ease 0.7s both;
+        }
+
+
+        /* ============================================
+           THE DISTRIBUTION GAP (Cream — editorial prose)
+           ============================================ */
+        .gap-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .prose-block {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+        .prose-block h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 24px;
+        }
+        .prose-block p {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 20px;
+        }
+        .prose-block p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        .prose-pullquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 24px;
+            margin: 32px 0;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--navy-deep);
+        }
+
+
+        /* ============================================
+           THREE LAYERS (Navy — flow diagram)
+           ============================================ */
+        .layers-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .layers-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .layers-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 14px;
+        }
+        .layers-intro {
+            font-size: 17px;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .layers-flow {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            gap: 0;
+            align-items: start;
+            max-width: 960px;
+            margin: 0 auto 48px;
+        }
+        .layer-card {
+            background: var(--navy-mid);
+            border-radius: var(--card-radius);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .layer-card .layer-num {
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--orange);
+            opacity: 0.8;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .layer-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-on-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .layer-card .layer-role {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 10px;
+        }
+        .layer-card p {
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--text-muted-on-dark);
+        }
+        .layer-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+            padding-top: 48px;
+        }
+        .layer-arrow svg {
+            width: 48px;
+            height: 24px;
+        }
+        .layers-note {
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-muted-on-dark);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .layers-note strong {
+            color: var(--text-on-dark);
+            font-weight: 600;
+        }
+
+
+        /* ============================================
+           WHAT FFF IS NOT (Light blue — numbered list)
+           ============================================ */
+        .boundary-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .boundary-header {
+            max-width: var(--wide-max);
+            margin: 0 auto 40px;
+        }
+        .boundary-header h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .boundary-header p {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            max-width: 640px;
+        }
+        .boundary-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0 48px;
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .boundary-item {
+            padding: 22px 0 22px 44px;
+            border-top: 1px solid var(--light-border);
+            position: relative;
+        }
+        .boundary-item:last-child {
+            border-bottom: 1px solid var(--light-border);
+        }
+        .boundary-item .boundary-num {
+            position: absolute;
+            left: 0;
+            top: 22px;
+            font-family: var(--display);
+            font-size: 28px;
+            color: var(--orange);
+            line-height: 1;
+            opacity: 0.8;
+        }
+        .boundary-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .boundary-item p {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+        }
+
+
+        /* ============================================
+           HOW THE TOOLS AMPLIFY (Cream — three cards)
+           ============================================ */
+        .tools-section {
+            background: var(--cream);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .tools-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .tools-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .tools-intro {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .tool-card {
+            background: var(--warm-white);
+            border-radius: var(--card-radius);
+            padding: 32px 28px;
+            border: 1px solid var(--light-border);
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-card .tool-num {
+            font-family: var(--display);
+            font-size: 36px;
+            color: var(--orange);
+            opacity: 0.7;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .tool-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .tool-card .tool-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+        .tool-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-mid);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .tool-card .tool-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--orange);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: opacity 0.2s ease;
+        }
+        .tool-card .tool-link:hover {
+            opacity: 0.7;
+        }
+        .tool-card .tool-link::after {
+            content: ' \2192';
+        }
+
+
+        /* ============================================
+           THE NETWORK EFFECT (Navy — prose + callout)
+           ============================================ */
+        .network-section {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .network-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .network-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            margin-bottom: 28px;
+        }
+        .network-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .network-columns p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-muted-on-dark);
+            margin-bottom: 18px;
+        }
+        .network-columns p strong {
+            color: var(--text-on-dark);
+            font-weight: 700;
+        }
+        .network-callout {
+            grid-column: 1 / -1;
+            background: var(--navy-mid);
+            border-radius: var(--card-radius);
+            padding: 32px 36px;
+            margin-top: 16px;
+            border-left: 4px solid var(--orange);
+        }
+        .network-callout p {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-on-dark);
+            margin: 0;
+        }
+
+
+        /* ============================================
+           HOW IT WORKS COMMERCIALLY (Light blue)
+           ============================================ */
+        .commercial-section {
+            background: var(--light-blue);
+            padding: var(--section-padding) var(--page-margin);
+        }
+        .commercial-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+        }
+        .commercial-inner h2 {
+            font-family: var(--display);
+            font-size: 44px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 14px;
+        }
+        .commercial-intro {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+        .exchange-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .exchange-card {
+            background: var(--cream);
+            border-radius: var(--card-radius);
+            padding: 32px 28px;
+            border: 1px solid var(--light-border);
+        }
+        .exchange-card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 18px;
+        }
+        .exchange-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .exchange-card li {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+            padding: 10px 0 10px 20px;
+            border-top: 1px solid var(--light-border);
+            position: relative;
+        }
+        .exchange-card li:last-child {
+            border-bottom: 1px solid var(--light-border);
+        }
+        .exchange-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--orange);
+            opacity: 0.7;
+        }
+        .models-block {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+        .models-block h3 {
+            font-family: var(--display);
+            font-size: 28px;
+            letter-spacing: 0.04em;
+            line-height: 0.95;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        .models-block p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 16px;
+        }
+        .models-block p strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        .model-item {
+            padding: 16px 0 16px 24px;
+            border-left: 2px solid var(--orange);
+            margin-bottom: 20px;
+        }
+        .model-item h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .model-item p {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-mid);
+            margin: 0;
+        }
+
+
+        /* ============================================
+           PAGE-SPECIFIC RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .layers-flow {
+                grid-template-columns: 1fr;
+                gap: 0;
+                max-width: 480px;
+            }
+            .layer-arrow {
+                padding: 12px 0;
+                transform: rotate(90deg);
+            }
+            .boundary-list { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+            .network-columns { grid-template-columns: 1fr; }
+            .exchange-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .coalition-hero { padding-top: 60px; }
+            .coalition-hero h1 { font-size: clamp(42px, 10vw, 72px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <div id="site-nav-root"></div>
+    <script src="js/components.js"></script>
+
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="coalition-hero">
+        <div class="coalition-hero-inner">
+            <div class="page-label">The Coalition</div>
+            <h1>THE IDEAS<br>ALREADY EXIST.<br>THE DISTRIBUTION<br>DOESN'T.</h1>
+            <p class="hero-intro">Britain's free-market think tanks produce world-class research. Almost none of it reaches the people who most need to hear it. Fighting for a Free Future is the bridge.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE DISTRIBUTION GAP (Cream)
+         ============================================ -->
+    <section class="gap-section">
+        <div class="prose-block reveal">
+            <h2>THE DISTRIBUTION PROBLEM</h2>
+            <p>The Centre for Policy Studies, the Institute of Economic Affairs, the Adam Smith Institute, the TaxPayers' Alliance &mdash; between them, they've produced decades of rigorous research on monetary policy, taxation, civil liberties, trade, and the foundations of a free society.</p>
+            <p>The ideas are serious. The evidence is strong. And almost all of it is locked inside institutional packaging that the next generation will never open.</p>
+        </div>
+
+        <div class="prose-block reveal reveal-delay-1">
+            <div class="prose-pullquote">A brilliant paper published behind an institutional website, shared as a PDF link with a two-line summary, reaches the people who already agree. Nobody else.</div>
+        </div>
+
+        <div class="prose-block reveal reveal-delay-2">
+            <p>The problem is structural, not intellectual. Think tank websites signal "institution" &mdash; white backgrounds, serif fonts, research grids, PDF downloads. That visual language triggers exactly the response you don't want from a 27-year-old professional scrolling on their phone: close the tab.</p>
+            <p><strong>Content dies after publication.</strong> A paper on monetary reform published six months ago might be the most relevant thing to today's debate. But nobody's surfacing it. There's no living index, no way for a newcomer to navigate the body of work by issue. Every think tank is a silo, and the connections between their thinking are invisible to anyone who doesn't already know where to look.</p>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE THREE LAYERS (Navy — flow diagram)
+         ============================================ -->
+    <section class="layers-section">
+        <div class="layers-inner reveal">
+            <h2>THREE LAYERS, ONE MISSING</h2>
+            <p class="layers-intro">Between an idea and the public, there are three layers. The middle one &mdash; the cultural translation layer &mdash; doesn't exist yet.</p>
+
+            <div class="layers-flow">
+                <div class="layer-card reveal reveal-delay-1">
+                    <div class="layer-num">01</div>
+                    <div class="layer-role">Originate</div>
+                    <h3>The Think Tanks</h3>
+                    <p>Research, evidence, policy proposals. Decades of intellectual depth across economics, liberty, trade, and governance. The substance is here.</p>
+                </div>
+
+                <div class="layer-arrow">
+                    <svg viewBox="0 0 48 24" fill="none"><path d="M0,12 L38,12 M32,4 L42,12 L32,20" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.6"/></svg>
+                </div>
+
+                <div class="layer-card reveal reveal-delay-1">
+                    <div class="layer-num">02</div>
+                    <div class="layer-role">Translate &amp; distribute</div>
+                    <h3>Fighting for a Free Future</h3>
+                    <p>Cultural presentation, social content, editorial voice, and tools designed to make ideas travel. The bridge between research and the people who need to hear it.</p>
+                </div>
+
+                <div class="layer-arrow">
+                    <svg viewBox="0 0 48 24" fill="none"><path d="M0,12 L38,12 M32,4 L42,12 L32,20" stroke="#E8582E" stroke-width="1.5" stroke-opacity="0.6"/></svg>
+                </div>
+
+                <div class="layer-card reveal reveal-delay-2">
+                    <div class="layer-num">03</div>
+                    <div class="layer-role">Engage</div>
+                    <h3>The Next Generation</h3>
+                    <p>Politically curious professionals, the media class, the already-convinced-but-cautious. The audiences that think tank websites structurally can't reach.</p>
+                </div>
+            </div>
+
+            <div class="layers-note reveal reveal-delay-2">
+                <strong>FFF doesn't replace what's on either side.</strong> Think tanks continue to originate the ideas. The public continues to form its own views. FFF connects the two by doing something neither think tanks nor the media establishment can do well: making serious ideas culturally consumable.
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         WHAT FFF IS NOT (Light blue — numbered list)
+         ============================================ -->
+    <section class="boundary-section">
+        <div class="boundary-header reveal">
+            <h2>NOT A THINK TANK. THE THINK TANKS' AMPLIFIER.</h2>
+            <p>The boundary is clear and deliberate. FFF doesn't compete with the coalition &mdash; it serves it. The moment FFF starts originating policy is the moment it becomes a less qualified version of what CPS, IEA, and ASI already do.</p>
+        </div>
+
+        <div class="boundary-list reveal reveal-delay-1">
+            <div class="boundary-item">
+                <span class="boundary-num">01</span>
+                <h3>No Policy Papers</h3>
+                <p>FFF doesn't produce research, publish reports, or make policy recommendations. The ideas come from the think tanks. FFF translates them into formats that travel.</p>
+            </div>
+            <div class="boundary-item">
+                <span class="boundary-num">02</span>
+                <h3>Cultural Distribution</h3>
+                <p>A media brand with editorial voice, a design system built for social feeds, and tools that give every piece of research a second life. The layer think tanks structurally can't build themselves.</p>
+            </div>
+            <div class="boundary-item">
+                <span class="boundary-num">03</span>
+                <h3>Traffic Flows Back</h3>
+                <p>Every carousel credits its source. Every topic page links to the original research. Every archive answer cites the originating think tank. FFF drives traffic to the coalition, not away from it.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         HOW THE TOOLS SERVE THE COALITION (Cream)
+         ============================================ -->
+    <section class="tools-section">
+        <div class="tools-inner reveal">
+            <h2>THREE SYSTEMS, BUILT FOR THE COALITION</h2>
+            <p class="tools-intro">Each of the three systems already built for Fighting for a Free Future has a natural extension into coalition-wide amplification.</p>
+
+            <div class="tools-grid">
+                <div class="tool-card reveal reveal-delay-1">
+                    <div class="tool-num">01</div>
+                    <div class="tool-subtitle">Gives research a second life</div>
+                    <h3>Social Distribution</h3>
+                    <p>Think tank research processed through the social engine becomes branded carousels &mdash; shareable, recognisable, designed to start conversations. Every carousel credits the source. The think tank gets brand visibility in an audience it can't reach alone.</p>
+                    <a href="social.html" class="tool-link">See the Instagram demo</a>
+                </div>
+                <div class="tool-card reveal reveal-delay-1">
+                    <div class="tool-num">02</div>
+                    <div class="tool-subtitle">Makes research navigable</div>
+                    <h3>The Knowledge Engine</h3>
+                    <p>Topic pages organised by issue, not by institution. A newcomer explores Sound Money and finds IEA's work on central banking alongside ASI's monetary proposals. FFF gives the 60-second entry point; the think tank catches the reader who wants the full paper.</p>
+                    <a href="topics/index.html" class="tool-link">Explore the topics</a>
+                </div>
+                <div class="tool-card reveal reveal-delay-2">
+                    <div class="tool-num">03</div>
+                    <div class="tool-subtitle">Makes research queryable</div>
+                    <h3>The Interactive Archive</h3>
+                    <p>Ask a question, get a synthesised answer drawing on the full body of the coalition's thinking &mdash; with source links back to each originating think tank. A paper published three years ago surfaces the moment it becomes relevant again.</p>
+                    <a href="ask.html" class="tool-link">Ask the archive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         THE NETWORK EFFECT (Navy — prose + callout)
+         ============================================ -->
+    <section class="network-section">
+        <div class="network-inner reveal">
+            <h2>THE NETWORK EFFECT</h2>
+
+            <div class="network-columns">
+                <div>
+                    <p><strong>Right now, every think tank is a silo.</strong> CPS publishes on fiscal policy. IEA publishes on economic freedom. ASI publishes on deregulation. The TaxPayers' Alliance publishes on public spending. Each has its own website, its own audience, its own archive. The connections between their thinking are invisible to anyone who doesn't already know the landscape.</p>
+                    <p>FFF's topic taxonomy &mdash; twelve issues across economics, trade, liberty, and politics &mdash; maps naturally to these specialisms. It becomes the connective tissue that makes work across organisations discoverable as a single, coherent body of thinking.</p>
+                </div>
+                <div>
+                    <p><strong>The more organisations participate, the stronger the system becomes.</strong> Every new think tank that feeds research into the knowledge engine makes every topic page richer. Every new paper processed through the social engine adds to the collective brand presence in feeds. Every new source indexed in the interactive archive makes the answers more comprehensive.</p>
+                    <p>This isn't a platform that extracts value. It's shared infrastructure that creates it. Each think tank's work becomes more discoverable, more shareable, and more connected to the broader movement &mdash; without losing attribution or institutional identity.</p>
+                </div>
+
+                <div class="network-callout reveal reveal-delay-1">
+                    <p>No single think tank can build a shared distribution layer for the free-market movement. But together, through Fighting for a Free Future, the coalition's thinking becomes navigable, shareable, and queryable for the first time &mdash; reaching audiences that institutional packaging never could.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         HOW IT WORKS COMMERCIALLY (Light blue)
+         ============================================ -->
+    <section class="commercial-section">
+        <div class="commercial-inner reveal">
+            <h2>SHARED INFRASTRUCTURE, SHARED INVESTMENT</h2>
+            <p class="commercial-intro">The distribution layer the free-market movement needs doesn't build itself. The commercial model is straightforward: think tanks invest in the infrastructure that makes their work reach further.</p>
+
+            <div class="exchange-grid">
+                <div class="exchange-card reveal reveal-delay-1">
+                    <h3>What think tanks get</h3>
+                    <ul>
+                        <li>Social distribution of research to audiences they can't reach alone</li>
+                        <li>Modern, culturally relevant presentation of their ideas</li>
+                        <li>Inclusion in the knowledge engine &mdash; research made navigable and discoverable by issue</li>
+                        <li>Research indexed in the interactive archive &mdash; surfaced the moment it becomes relevant</li>
+                        <li>Youth audience exposure and brand association with a high-quality media property</li>
+                    </ul>
+                </div>
+                <div class="exchange-card reveal reveal-delay-1">
+                    <h3>What FFF gets</h3>
+                    <ul>
+                        <li>A content pipeline grounded in rigorous research, not just editorial opinion</li>
+                        <li>Coalition depth &mdash; serious institutions backing the platform with substance</li>
+                        <li>Revenue to sustain and develop the shared infrastructure</li>
+                        <li>Research evidence to underpin topic pages and social content</li>
+                        <li>The credibility that comes from being the movement's chosen distribution layer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="models-block reveal reveal-delay-2">
+                <h3>PARTNERSHIP MODELS</h3>
+                <p>Three ways to structure the relationship &mdash; from individual participation through to collective investment:</p>
+
+                <div class="model-item">
+                    <h4>Partnership Subscription</h4>
+                    <p>An annual fee for inclusion in the distribution engine, knowledge engine, and interactive archive. Tiered: from topic page links and archive indexing through to full social engine processing and featured placement.</p>
+                </div>
+                <div class="model-item">
+                    <h4>Distribution Retainer</h4>
+                    <p>FFF processes a set number of think tank publications per month through the social engine. The think tank provides the research; FFF handles extraction, design, and distribution. Every piece credits the source.</p>
+                </div>
+                <div class="model-item">
+                    <h4>Coalition Sponsorship</h4>
+                    <p>Think tanks collectively fund FFF's infrastructure as shared movement resources. Not purchasing a service &mdash; investing in the distribution layer the movement lacks. Same economics, different conversation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CTA (Navy-deep)
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <h2 class="cta-title">SEE THE SYSTEMS</h2>
+            <p class="cta-subtitle">Three systems, built and working. Explore how Fighting for a Free Future turns existing content into cultural reach.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <a href="social.html" style="display: inline-block; padding: 14px 28px; background: var(--orange); color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: background 0.2s ease;">Instagram</a>
+                <a href="topics/index.html" style="display: inline-block; padding: 14px 28px; background: transparent; color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; border: 1px solid rgba(248,246,242,0.3); transition: background 0.2s ease;">Topics</a>
+                <a href="ask.html" style="display: inline-block; padding: 14px 28px; background: transparent; color: var(--cream); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; border: 1px solid rgba(248,246,242,0.3); transition: background 0.2s ease;">Ask the Archive</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <div id="site-footer-root"></div>
+
+
+    <!-- ============================================
+         SHARED JS
+         ============================================ -->
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

@@ -15,7 +15,8 @@
         { label: 'Strategy',  href: 'strategy.html',    key: 'strategy' },
         { label: 'Instagram', href: 'social.html',      key: 'social' },
         { label: 'Topics',    href: 'topics/index.html', key: 'topics' },
-        { label: 'Ask',       href: 'ask.html',         key: 'ask' }
+        { label: 'Ask',       href: 'ask.html',         key: 'ask' },
+        { label: 'Coalition', href: 'coalition.html',   key: 'coalition' }
     ];
 
     // --- Footer-only items (all pages still linked from footer) ---
@@ -83,6 +84,7 @@
                 '<div class="footer-links">' +
                     '<a href="' + base + 'mission.html">Mission</a>' +
                     '<a href="' + base + 'strategy.html">Strategy</a>' +
+                    '<a href="' + base + 'coalition.html">Coalition</a>' +
                     '<a href="' + base + 'topics/index.html">Topics</a>' +
                     '<a href="' + base + 'ask.html">Ask</a>' +
                     '<a href="' + base + 'social.html">Instagram</a>' +
