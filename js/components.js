@@ -82,14 +82,11 @@
                 '</div>' +
                 '<div class="footer-links">' +
                     '<a href="' + base + 'mission.html">Mission</a>' +
-                    '<a href="' + base + 'strategy.html">Strategy</a>' +
-                    '<a href="' + base + 'coalition.html">Coalition</a>' +
-                    '<a href="' + base + 'topics/index.html">Topics</a>' +
-                    '<a href="' + base + 'ask.html">Ask</a>' +
-                    '<a href="' + base + 'social.html">Instagram</a>' +
                     '<a href="' + base + 'writers.html">Writers</a>' +
                     '<a href="' + base + 'articles.html">Articles</a>' +
                     '<a href="' + base + 'podcast.html">Podcast</a>' +
+                    '<a href="' + base + 'events.html">Events</a>' +
+                    '<a href="' + base + 'shop.html">Shop</a>' +
                     '<a href="' + base + 'support.html">Support</a>' +
                 '</div>' +
             '</div>' +
